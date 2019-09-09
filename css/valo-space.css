@@ -1,0 +1,46 @@
+@import url("https://use.typekit.net/vqw1zxr.css");
+
+body {
+  background-image: url("../Images/Photo__Space_Valo_Landing_Page_BAckground_Q4_2019.jpg") !important;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; 
+  color:white;
+  font-family: proxima-nova, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+h2 {
+  text-align: center;
+}
+
+p {
+  text-align: center
+}
+
+.gllpUpdateButton {
+  background-color: rgba(255, 255, 255, 0.75);
+  border: none;
+  color: #13171D;
+  padding: 15px 32px;
+  border-radius: 3px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.info {
+  margin-left: auto; 
+  margin-right: auto;
+  text-align: center;
+}

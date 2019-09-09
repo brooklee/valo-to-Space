@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+	<title>Google Maps Latitude and Longitude Picker jQuery plugin</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<link rel="stylesheet" type="text/css" href="css/demo.css"/>
+
+	<!-- Dependencies: JQuery and GMaps API should be loaded first -->
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCyrJDHTdAiCLZqF0XgLP_PA0d7gmVEoAA&sensor=false"></script>
+
+	<!-- CSS and JS for our code -->
+	<link rel="stylesheet" type="text/css" href="css/jquery-gmaps-latlon-picker.css"/>
+
+	<link rel="stylesheet" type="text/css" href="css/valo-space.css"/>
+	<script src="js/jquery-gmaps-latlon-picker.js"></script>
+	<script src="js/valo-scripts.js"></script>
+
+	<script>		
+	</script>
+</head>
+
+<!-- aria-label="LONG" -->
+
+<!-- AJAX Request sent to -->
+<!-- https://script.google.com/macros/s/AKfycbx3vNK9UjmmDV7toGNM9I7J6DuccAYsXlBAbxaj3GoUS-Rup7c/exec -->
+
+<body>
+
+	<div>
+			<h1> Valo to Space</h1>
+			<h2> Guess where the Valo Landed</h2>
+			<p> Double click on the map below to move the marker and guess where the VALO<sup>&trade;</sup> landed. <br> *Note: the starting place of the marker is placed at lift-off of the VALO<sup>&trade;</sup></p>
+	</div>
+
+		<fieldset class="gllpLatlonPicker">
+				<br/><br/>
+				<div class="gllpMap">Google Maps</div>
+				<br/>
+				<div class="info">
+						Lat:
+						<input type="text" class="gllpLatitude" value="40.5657534"/>
+						Long:
+						<input type="text" class="gllpLongitude" value="-111.9062161"/>
+					<input style="display: none;" type="text" class="gllpZoom" value="7"/>
+					<input  type="button" class="gllpUpdateButton" value="update map">
+				</div>
+				
+			</fieldset>
+
+			<!-- <form id="test-form">
+  
+					<div>
+						<label>LONG</label>
+						<input type="text" name="LONG" placeholder="Longitude"/>
+					</div>
+				
+					<div>
+						<label>LAT</label>
+						<input type="text" name="LAT" placeholder="Latitude"/>
+					</div>
+					
+					<div>
+						<label>First Name</label>
+						<input type="text" name="First_Name" placeholder="First Name"/>
+					</div>
+					
+					<div>
+						<label>Last Name</label>
+						<input type="text" name="Last_Name" placeholder="Last Name"/>
+					</div>
+
+					<div>
+							<label>Office</label>
+							<input type="text" name="Office" placeholder="Office Name"/>
+						</div>
+
+						<div>
+								<label>City</label>
+								<input type="text" name="City" placeholder="City"/>
+							</div>
+
+							<div>
+									<label>State</label>
+									<input type="text" name="State" placeholder="State"/>
+							</div>
+
+								<div>
+										<label>COuntry</label>
+										<input type="text" name="Country" placeholder="Country"/>
+								</div>
+				
+					<div>
+						<button type="submit"id="submit-form">Submit</button>
+					</div>
+				
+				</form> -->
+				
+				
+				<div class="form-container">
+						<form name="submit-to-google-sheet">
+							<input name="email" type="email" placeholder="Email" required>
+							<input name="firstName" type="text" placeholder="First Name">
+							<input name="lastName" type="text" placeholder="Last Name">
+							<button class="button" type="submit">Submit</button>
+						</form>
+				
+						<div class="loading js-loading is-hidden">
+							<div class="loading-spinner">
+								<svg><circle cx="25" cy="25" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/></svg>
+							</div>
+						</div>
+				
+						<p class="js-success-message is-hidden">Success!</p>
+						<p class="js-error-message is-hidden">Error!</p>
+					</div>
+				
+					<a href="https://docs.google.com/spreadsheets/d/16vDPkBwtMNNMzgbmKfxfOEqGZhtfJha097ZKB23dZdc/edit?usp=sharing" target="_blank">View the Google Sheet</a>
+					<a href="https://github.com/jamiewilson/form-to-google-sheets" target="_blank">View on GitHub</a>
+				
+					<script>
+						const scriptURL = 'https://script.google.com/a/stylesheets.co/macros/s/AKfycbzl3hk6JfWqMkVz8S1p5Txky_fscyNWJUCuQQHGHfVP5YLH99A/exec'
+						const form = document.forms['submit-to-google-sheet']
+						const loading = document.querySelector('.js-loading')
+						const successMessage = document.querySelector('.js-success-message')
+						const errorMessage = document.querySelector('.js-error-message')
+				
+						form.addEventListener('submit', e => {
+							e.preventDefault()
+							showLoadingIndicator()
+							fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+								.then(response => showSuccessMessage(response))
+								.catch(error => showErrorMessage(error))
+						})
+				
+						function showLoadingIndicator () {
+							form.classList.add('is-hidden')
+							loading.classList.remove('is-hidden')
+						}
+				
+						function showSuccessMessage (response) {
+							console.log('Success!', response)
+							setTimeout(() => {
+								successMessage.classList.remove('is-hidden')
+								loading.classList.add('is-hidden')
+							}, 500)
+						}
+				
+						function showErrorMessage (error) {
+							console.error('Error!', error.message)
+							setTimeout(() => {
+								errorMessage.classList.remove('is-hidden')
+								loading.classList.add('is-hidden')
+							}, 500)
+						}
+					</script>
+				
+</body>
+<script>
+	
+</script>
+</html>
