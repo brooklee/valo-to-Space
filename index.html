@@ -31,10 +31,10 @@
 	<div>
 			<h1> Valo to Space</h1>
 			<h2> Guess where the Valo Landed</h2>
-			<p> Double click on the map below to move the marker and guess where the VALO<sup>&trade;</sup> landed. <br> *Note: the starting place of the marker is placed at lift-off of the VALO<sup>&trade;</sup></p>
+			<p> Double click (Double Tap) on the map below to move the marker and guess where the VALO<sup>&trade;</sup> landed. <br> *Note: the starting place of the marker is placed at lift-off of the VALO<sup>&trade;</sup></p>
 	</div>
 
-		<fieldset class="gllpLatlonPicker">
+		<!-- <fieldset class="gllpLatlonPicker">
 				<br/><br/>
 				<div class="gllpMap">Google Maps</div>
 				<br/>
@@ -47,100 +47,130 @@
 					<input  type="button" class="gllpUpdateButton" value="update map">
 				</div>
 				
+			</fieldset> -->
+
+			<fieldset class="gllpLatlonPicker">
+				<br/><br/>
+				<div class="gllpMap">Google Maps</div>
+				<br/>
+				<div class="rocket">
+						<div class="form-container">
+								<form name="submit-to-google-sheet">
+									<p class="form-title">Email</p>
+									<input id="userEmail" name="email" type="email" placeholder="Email" required>
+									<p class="form-title">First Name</p>
+									<input name="firstName" type="text" placeholder="First Name" required>
+									<p class="form-title">Last Name</p>
+									<input name="lastName" type="text" placeholder="Last Name" required>
+
+									<div class="form-map">
+											<p class="form-title">Latitude</p>
+											<input class="gllpLatitude" name="LAT" value="40.5657534" type="text" placeholder="Lattitude" required>
+											<p class="form-title">Longitude</p>
+											<input class="gllpLongitude" value="-111.9062161" name="LONG" type="text" placeholder="Longitude" required>
+
+											<input  type="button" class="gllpUpdateButton" value="update map">
+									</div>
+								
+									<p class="form-title">Office</p>
+									<p class="form-title"></p>
+									<input name="office" type="text" placeholder="Office Name" required>
+									<p class="form-title">City</p>
+									<input name="city" type="text" placeholder="city" required>
+									<p class="form-title">State</p>
+									<input name="state" type="text" placeholder="State" required>
+									<p class="form-title">Country</p>
+									<input name="country" type="text" placeholder="Country" required>
+									<input style="display: none;" type="text" class="gllpZoom" value="7"/>
+									<button id="submit" class="button" type="submit">Submit</button>
+								</form>
+						
+								<div class="loading js-loading is-hidden">
+									<div class="loading-spinner">
+										<svg><circle cx="25" cy="25" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/></svg>
+									</div>
+								</div>
+						
+								<p class="js-success-message is-hidden form-message">Success!</p>
+								<p class="js-error-message is-hidden form-message">Error!</p>
+								<p class="js-error-duplicate is-hidden form-message">Sorry only one entry per person! You can have 3 diffrent people from the same office enter just be sure to use a diffrent email per entry.</p>
+							</div>
+			
+							<!-- <a href="https://docs.google.com/spreadsheets/d/1Q7OrRTByqyPn2sInibfRSkfTN1QtTolZTwR07L2QG3E/edit?usp=sharing" target="_blank">View the Google Sheet</a> -->
+							<!-- <a href="https://github.com/jamiewilson/form-to-google-sheets" target="_blank">View on GitHub</a> -->
+						
+							<div>
+								<img class="rocket-ship" src="Images/Illustration_Valo_to_Space_RocketShip_Landing_Page_Q4_2019.svg"
+							</div>
+
+							<!-- <div class="results"> results will go here</div>  -->
+
+				</div>
+				
+
 			</fieldset>
 
-			<!-- <form id="test-form">
-  
-					<div>
-						<label>LONG</label>
-						<input type="text" name="LONG" placeholder="Longitude"/>
-					</div>
-				
-					<div>
-						<label>LAT</label>
-						<input type="text" name="LAT" placeholder="Latitude"/>
-					</div>
-					
-					<div>
-						<label>First Name</label>
-						<input type="text" name="First_Name" placeholder="First Name"/>
-					</div>
-					
-					<div>
-						<label>Last Name</label>
-						<input type="text" name="Last_Name" placeholder="Last Name"/>
-					</div>
+		
 
-					<div>
-							<label>Office</label>
-							<input type="text" name="Office" placeholder="Office Name"/>
-						</div>
+				
 
-						<div>
-								<label>City</label>
-								<input type="text" name="City" placeholder="City"/>
-							</div>
-
-							<div>
-									<label>State</label>
-									<input type="text" name="State" placeholder="State"/>
-							</div>
-
-								<div>
-										<label>COuntry</label>
-										<input type="text" name="Country" placeholder="Country"/>
-								</div>
-				
-					<div>
-						<button type="submit"id="submit-form">Submit</button>
-					</div>
-				
-				</form> -->
-				
-				
-				<div class="form-container">
-						<form name="submit-to-google-sheet">
-							<input name="email" type="email" placeholder="Email" required>
-							<input name="firstName" type="text" placeholder="First Name">
-							<input name="lastName" type="text" placeholder="Last Name">
-							<button class="button" type="submit">Submit</button>
-						</form>
-				
-						<div class="loading js-loading is-hidden">
-							<div class="loading-spinner">
-								<svg><circle cx="25" cy="25" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/></svg>
-							</div>
-						</div>
-				
-						<p class="js-success-message is-hidden">Success!</p>
-						<p class="js-error-message is-hidden">Error!</p>
-					</div>
-				
-					<a href="https://docs.google.com/spreadsheets/d/1Q7OrRTByqyPn2sInibfRSkfTN1QtTolZTwR07L2QG3E/edit?usp=sharing" target="_blank">View the Google Sheet</a>
-					<a href="https://github.com/jamiewilson/form-to-google-sheets" target="_blank">View on GitHub</a>
-				
 					<script>
 						const scriptURL = 'https://script.google.com/macros/s/AKfycbyI8Xr6LKoFPmV2c1eq6SR-2WDcAcTIBFxjX8XH5BBlKQGOst4/exec'
 						const form = document.forms['submit-to-google-sheet']
 						const loading = document.querySelector('.js-loading')
 						const successMessage = document.querySelector('.js-success-message')
 						const errorMessage = document.querySelector('.js-error-message')
-				
+						const errorDuplicateEmail = document.querySelector('.js-error-duplicate')
+
+						var emails = []
+						var currentEmail = ""
+
+
+
+						
 						form.addEventListener('submit', e => {
 							e.preventDefault()
+							getCurrentEmail()
+							compareEmails()
 							showLoadingIndicator()
-							fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+							// fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+							// 	.then(response => showSuccessMessage(response))
+							// 	.catch(error => showErrorMessage(error))
+
+							//Compare currentEmail to array 
+							function compareEmails(){
+								//Compare
+							for (i=0; i < emails.length; i++){
+							console.log(emails[i]);
+							//if there is a match show error message
+							if (currentEmail == emails[i]) {
+								console.log("uh oh there's a match")
+								showErrorDuplicateEmail();
+								//if no matching emails Post data and show success Message
+								} else {
+									console.log("good no matching emails")
+									fetch(scriptURL, { method: 'POST', body: new FormData(form)})
 								.then(response => showSuccessMessage(response))
 								.catch(error => showErrorMessage(error))
+								}
+	
+							}
+						}
+							
 						})
-				
+
+						// var getData = () => {
+						// 	fetch(scriptURL, { method: 'GET', body: FormData(form)})
+						// 		console.log ("fetched")
+						// }
+
 						function showLoadingIndicator () {
 							form.classList.add('is-hidden')
 							loading.classList.remove('is-hidden')
 						}
 				
 						function showSuccessMessage (response) {
-							console.log('Success!', response)
+							console.log('Success!', response, FormData)
 							setTimeout(() => {
 								successMessage.classList.remove('is-hidden')
 								loading.classList.add('is-hidden')
@@ -154,6 +184,82 @@
 								loading.classList.add('is-hidden')
 							}, 500)
 						}
+
+						function showErrorDuplicateEmail () {
+							console.error('Error!')
+							setTimeout(() => {
+								errorDuplicateEmail.classList.remove('is-hidden')
+								loading.classList.add('is-hidden')
+							}, 500)
+						}
+
+// *************************************************************
+						// data fetch to compare var currentEmail
+// *************************************************************
+						// ID of SpreadSheet
+						// https://spreadsheets.google.com/feeds/list/1Q7OrRTByqyPn2sInibfRSkfTN1QtTolZTwR07L2QG3E/od6/public/basic?alt=json
+						var spreadsheetID = "1Q7OrRTByqyPn2sInibfRSkfTN1QtTolZTwR07L2QG3E";
+
+						// Make sure it is public or set to Anyone with link can view 
+						var url = "https://spreadsheets.google.com/feeds/list/"+spreadsheetID+"/od6/public/values?alt=json";
+
+						$.getJSON(url, function(data) {
+
+							var entry = data.feed.entry;
+
+							$(entry).each(function(){
+								// Column names are name, age, etc.
+								// $('.results').prepend('<h2>'+this.content.$t+'</h2>');
+
+								//Grab the submitted information
+								var userInfo = this.content.$t
+
+								//split the Info into an Array
+								var userArray = userInfo.split(',')
+
+								//grab the user email information
+								var email = userArray[0]
+								//push to emails arrary for comparison
+								emails.push(email)
+
+								// console.log($(this.content.$t).val().split(','))
+							});
+
+						});
+
+// *************************************************************
+						//End  data fetch to compare var currentEmail
+// *************************************************************
+
+						// push user input into var currentEmail
+						function getCurrentEmail(){
+							var text = document.getElementById("userEmail").value;
+							console.log(text)
+							currentEmail = 'email: ' + text
+
+							//TODO: push to current email var
+						}
+
+						//Compare currentEmail to array 
+						// function compareEmails(){
+						// 	for (i=0; i < emails.length; i++){
+						// 	console.log(emails[i]);
+						// 	if (currentEmail == emails[i]) {
+						// 		console.log("uh oh there's a match")
+						// 		} else {
+						// 			console.log("good no matching emails")
+						// 		}
+	
+						// 	}
+						// }
+						
+
+
+
+						// TODO: compare duplicate emails
+						// TODO: send Message to user
+						// TODO: Remove most recent entry from spreadsheet
+
 					</script>
 				
 </body>

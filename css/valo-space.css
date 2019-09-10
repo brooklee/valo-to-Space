@@ -1,8 +1,13 @@
 @import url("https://use.typekit.net/vqw1zxr.css");
 
+:root {
+  --accent: #00A1E4;
+  --purple: #2d005b;
+}
+
+
 body {
-  background-image: url("../Images/Photo__Space_Valo_Landing_Page_BAckground_Q4_2019.jpg") !important;
-  background-attachment: fixed;
+  background-color: #000722;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center; 
@@ -25,10 +30,14 @@ p {
   text-align: center
 }
 
+input{
+  max-width: 300px;
+}
+
 .gllpUpdateButton {
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: var(--purple);
   border: none;
-  color: #13171D;
+  color: #fff;
   padding: 15px 32px;
   border-radius: 3px;
   text-align: center;
@@ -39,8 +48,129 @@ p {
   cursor: pointer;
 }
 
-.info {
-  margin-left: auto; 
-  margin-right: auto;
+.gllpUpdateButton:hover {
+  background-color: var(--accent);
+}
+
+.rocket{
+  background-image: url("../Images/Photo__Space_Valo_Landing_Page_BAckground_Q4_2019.jpg") !important;
+  background-color: #000722;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center ;
+}
+/* Form */
+.form-container {
+  position: relative;
+  background: #fff;
+  padding:2rem;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  max-width: 400px;
+  min-height: 300px;
+  margin: 0 auto;
+  box-shadow: 0 10px 50px 0 rgb(0, 0, 0);
+  margin-bottom: 2rem;
+}
+
+.form-title{
+  color: gray;
+  text-align: left;
+  font-weight: 300;
+
+}
+
+.form-map{
+  background-color: #2e005b1e;
+  padding: 1rem;
+}
+
+input, button {
+  appearance: none;
+  border: none;
+  font-size: inherit;
+  background: #eee;
+  border-radius: 3px;
+  padding: 1rem;
+  width: 100%;
+}
+
+input {
+  margin-bottom: 1rem;
+}
+
+input:focus {
+  outline: 1px solid var(--accent);
+}
+
+button {
+  color: #fff;
+  cursor: pointer;
+  background-color: var(--purple);
+}
+
+button:hover {
+  background-color: var(--accent);
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+.form-message {
+  color: var(--purple);
+}
+
+@keyframes rotate {
+  100% { transform: rotate(360deg); }
+ }
+
+ @keyframes dash {
+  0% { stroke-dasharray: 1,200; stroke-dashoffset: 0; }
+  50% { stroke-dasharray: 89,200; stroke-dashoffset: -35; }
+  100% { stroke-dasharray: 89,200; stroke-dashoffset: -124; }
+ }
+
+ .loading {
+   position: absolute;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+ }
+
+ .loading-spinner {
+   width: 50px;
+   height: 50px;
+ }
+
+ .loading-spinner svg {
+   position: relative;
+   animation: rotate 2s linear infinite;
+   height: 50px;
+   width: 50px;
+ }
+
+ .loading-spinner circle {
+   stroke: var(--accent);
+   stroke-dasharray: 1,200;
+   stroke-dashoffset: 0;
+   stroke-linecap: round;
+   animation: dash 1.5s ease-in-out infinite;
+ }
+
+.rocket-ship{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  
 }
