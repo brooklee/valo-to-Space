@@ -1,8 +1,8 @@
 @import url("https://use.typekit.net/vqw1zxr.css");
 
 :root {
-  --accent: #00A1E4;
-  --purple: #2d005b;
+  --accent: #2d005b ;
+  --purple: #00A1E4;;
 }
 
 
@@ -13,13 +13,14 @@ body {
   background-position: center; 
   color:white;
   font-family: proxima-nova, sans-serif;
-  font-weight: 700;
   font-style: normal;
 }
 
 h1 {
   text-align: center;
   text-transform: uppercase;
+  font-size: 2em; 
+  font-weight: 700;
 }
 
 h2 {
@@ -52,8 +53,58 @@ input{
   background-color: var(--accent);
 }
 
-.rocket{
-  background-image: url("../Images/Photo__Space_Valo_Landing_Page_BAckground_Q4_2019.jpg") !important;
+.gllpLatlonPicker	{ margin: 20px 0; }
+
+/* If the map DIV doesn't have a size set up, it won't appear on the page */
+.gllpMap	{ 
+  width: 400px; 
+  height: 300px; 
+  margin-left: auto; 
+  margin-right: auto;
+}
+
+/* md */
+@media screen and (min-width: 768px) {
+  .gllpMap	{ 
+    width: 600px; 
+    height: 400px; 
+    margin-left: auto; 
+    margin-right: auto;
+  }
+}
+
+/* md-lg */
+@media screen and (min-width: 900px) {
+  .gllpMap	{ 
+    width: 600px; 
+    height: 400px; 
+    margin-left: auto; 
+    margin-right: auto;
+  }
+}
+
+/* lg */
+@media screen and (min-width: 1024px) {
+  .gllpMap	{ 
+    width: 500px; 
+    height: 400px; 
+    margin-left: auto; 
+    margin-right: auto;
+  }
+}
+
+/* xl */
+@media screen and (min-width: 1300px) {
+  .gllpMap	{ 
+    width: 700px; 
+    height: 400px; 
+    margin-left: auto; 
+    margin-right: auto;
+  }
+}
+
+.stars{
+  background-image: url("../Images/Photo__Space_Valo_Landing_Page_Background_Q4_2019_V2.jpg") !important;
   background-color: #000722;
   background-repeat: no-repeat;
   background-size: cover;
@@ -61,8 +112,9 @@ input{
 }
 /* Form */
 .form-container {
-  position: relative;
+  /* position: relative; */
   background: #fff;
+  color:gray;
   padding:2rem;
   border-radius: 6px;
   display: flex;

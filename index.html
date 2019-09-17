@@ -4,14 +4,17 @@
 	<title>Google Maps Latitude and Longitude Picker jQuery plugin</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-	<link rel="stylesheet" type="text/css" href="css/demo.css"/>
+	<!-- Tailwind -->
+	<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
+
+
 
 	<!-- Dependencies: JQuery and GMaps API should be loaded first -->
 	<script src="js/jquery-2.1.1.min.js"></script>
 	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCyrJDHTdAiCLZqF0XgLP_PA0d7gmVEoAA&sensor=false"></script>
 
-	<!-- CSS and JS for our code -->
-	<link rel="stylesheet" type="text/css" href="css/jquery-gmaps-latlon-picker.css"/>
+
 
 	<link rel="stylesheet" type="text/css" href="css/valo-space.css"/>
 	<script src="js/jquery-gmaps-latlon-picker.js"></script>
@@ -26,13 +29,199 @@
 <!-- AJAX Request sent to -->
 <!-- https://script.google.com/macros/s/AKfycbx3vNK9UjmmDV7toGNM9I7J6DuccAYsXlBAbxaj3GoUS-Rup7c/exec -->
 
-<body>
+<body class="stars">
 
-	<div>
-			<h1> Valo to Space</h1>
-			<h2> Guess where the Valo Landed</h2>
-			<p> Double click (Double Tap) on the map below to move the marker and guess where the VALO<sup>&trade;</sup> landed. <br> *Note: the starting place of the marker is placed at lift-off of the VALO<sup>&trade;</sup></p>
+		<div class="flex mb-4 mt-12 mb-12">
+				<div class="w-full">
+						<h1> Can you guess where the VALO light landed?</h1>
+				</div>
+			</div>
+
+			<fieldset class="gllpLatlonPicker">
+				<div class="flex mb-4">
+<!-- ***************************** -->
+<!-- ***************************** -->
+					<!-- Large -->
+<!-- ***************************** -->
+<!-- ***************************** -->
+					<!-- Map -->
+					<div class="sm:w-full lg:w-1/2 pl:8 md:pl-16 hidden lg:block">
+						<p class="text-left mb-12 max-w-lg mx-auto">2019 marks the VALO curing light’s 10th anniversary, and to celebrate, we sent a VALO light into space! Guess where it landed for your chance to win a FREE VALO light! Just click where you think it landed on the map below and then enter in your office information. Whoever guesses the closest location wins a VALO curing light!</p>
+						<div class="gllpMap">Google Maps</div>
+						<p class="text-left mt-8 max-w-lg mx-auto"> Click and drag the pointer on the map to move the marker and guess where the VALO<sup>&trade;</sup> landed. <br> *Note: the starting place of the marker is placed at lift-off of the VALO<sup>&trade;</sup></p>
+						<br/>
+					</div>
+
+					<!-- Form -->
+					<div class="sm:w-full lg:w-1/2 pr:8 hidden lg:block">
+						<div>
+								<div class="form-container">
+										<form name="submit-to-google-sheet">
+											<p class="form-title">Email</p>
+											<input id="userEmail" name="email" type="email" placeholder="Email" required>
+											<p class="form-title">First Name</p>
+											<input name="firstName" type="text" placeholder="First Name" required>
+											<p class="form-title">Last Name</p>
+											<input name="lastName" type="text" placeholder="Last Name" required>
+		
+											<div class="form-map">
+													<p class="form-title">Latitude</p>
+													<input class="gllpLatitude" name="LAT" value="40.5657534" type="text" placeholder="Lattitude" required>
+													<p class="form-title">Longitude</p>
+													<input class="gllpLongitude" value="-111.9062161" name="LONG" type="text" placeholder="Longitude" required>
+		
+													<input  type="button" class="gllpUpdateButton" value="update map">
+											</div>
+										
+											<p class="form-title">Office</p>
+											<p class="form-title"></p>
+											<input name="office" type="text" placeholder="Office Name" required>
+											<p class="form-title">City</p>
+											<input name="city" type="text" placeholder="city" required>
+											<p class="form-title">State</p>
+											<input name="state" type="text" placeholder="State" required>
+											<p class="form-title">Country</p>
+											<input name="country" type="text" placeholder="Country" required>
+											<input style="display: none;" type="text" class="gllpZoom" value="7"/>
+											<button id="submit" class="button" type="submit">Submit</button>
+										</form>
+								
+										<div class="loading js-loading is-hidden">
+											<div class="loading-spinner">
+												<svg><circle cx="25" cy="25" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/></svg>
+											</div>
+										</div>
+								
+										<p class="js-success-message is-hidden form-message">Success!</p>
+										<p class="js-error-message is-hidden form-message">Error!</p>
+										<p class="js-error-duplicate is-hidden form-message">Sorry only one entry per person! You can have 3 diffrent people from the same office enter just be sure to use a diffrent email per entry.</p>
+									</div>
+					
+									<!-- <a href="https://docs.google.com/spreadsheets/d/1Q7OrRTByqyPn2sInibfRSkfTN1QtTolZTwR07L2QG3E/edit?usp=sharing" target="_blank">View the Google Sheet</a> -->
+									<!-- <a href="https://github.com/jamiewilson/form-to-google-sheets" target="_blank">View on GitHub</a> -->
+								
+									<!-- <div>
+										<img class="rocket-ship" src="Images/Illustration_Valo_to_Space_RocketShip_Landing_Page_Q4_2019.svg"
+									</div> -->
+		
+									<!-- <div class="results"> results will go here</div>  -->
+		
+						</div>
+						
+					</div>
+
+	<!-- ***************************** -->
+<!-- ***************************** -->
+					<!-- small -->
+<!-- ***************************** -->
+<!-- ***************************** -->
+					<div class="w-full  block lg:hidden">
+							<div>
+									<h1> Valo to Space</h1>
+									<h2> Guess where the Valo Landed</h2>
+									<p> Double click (Double Tap) on the map below to move the marker and guess where the VALO<sup>&trade;</sup> landed. <br> *Note: the starting place of the marker is placed at lift-off of the VALO<sup>&trade;</sup></p>
+							</div>
+						
+								<!-- <fieldset class="gllpLatlonPicker">
+										<br/><br/>
+										<div class="gllpMap">Google Maps</div>
+										<br/>
+										<div class="info">
+												Lat:
+												<input type="text" class="gllpLatitude" value="40.5657534"/>
+												Long:
+												<input type="text" class="gllpLongitude" value="-111.9062161"/>
+											<input style="display: none;" type="text" class="gllpZoom" value="7"/>
+											<input  type="button" class="gllpUpdateButton" value="update map">
+										</div>
+										
+									</fieldset> -->
+						
+									<fieldset class="gllpLatlonPicker">
+										<br/><br/>
+										<div class="gllpMap">Google Maps</div>
+										<br/>
+										<div class="rocket">
+												<div class="form-container">
+														<form name="submit-to-google-sheet">
+															<p class="form-title">Email</p>
+															<input id="userEmail" name="email" type="email" placeholder="Email" required>
+															<p class="form-title">First Name</p>
+															<input name="firstName" type="text" placeholder="First Name" required>
+															<p class="form-title">Last Name</p>
+															<input name="lastName" type="text" placeholder="Last Name" required>
+						
+															<div class="form-map">
+																	<p class="form-title">Latitude</p>
+																	<input class="gllpLatitude" name="LAT" value="40.5657534" type="text" placeholder="Lattitude" required>
+																	<p class="form-title">Longitude</p>
+																	<input class="gllpLongitude" value="-111.9062161" name="LONG" type="text" placeholder="Longitude" required>
+						
+																	<input  type="button" class="gllpUpdateButton" value="update map">
+															</div>
+														
+															<p class="form-title">Office</p>
+															<p class="form-title"></p>
+															<input name="office" type="text" placeholder="Office Name" required>
+															<p class="form-title">City</p>
+															<input name="city" type="text" placeholder="city" required>
+															<p class="form-title">State</p>
+															<input name="state" type="text" placeholder="State" required>
+															<p class="form-title">Country</p>
+															<input name="country" type="text" placeholder="Country" required>
+															<input style="display: none;" type="text" class="gllpZoom" value="7"/>
+															<button id="submit" class="button" type="submit">Submit</button>
+														</form>
+												
+														<div class="loading js-loading is-hidden">
+															<div class="loading-spinner">
+																<svg><circle cx="25" cy="25" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/></svg>
+															</div>
+														</div>
+												
+														<p class="js-success-message is-hidden form-message">Success!</p>
+														<p class="js-error-message is-hidden form-message">Error!</p>
+														<p class="js-error-duplicate is-hidden form-message">Sorry only one entry per person! You can have 3 diffrent people from the same office enter just be sure to use a diffrent email per entry.</p>
+													</div>
+									
+													<!-- <a href="https://docs.google.com/spreadsheets/d/1Q7OrRTByqyPn2sInibfRSkfTN1QtTolZTwR07L2QG3E/edit?usp=sharing" target="_blank">View the Google Sheet</a> -->
+													<!-- <a href="https://github.com/jamiewilson/form-to-google-sheets" target="_blank">View on GitHub</a> -->
+												
+													<div>
+														<img class="rocket-ship" src="Images/Illustration_Valo_to_Space_RocketShip_Landing_Page_Q4_2019.svg"
+													</div>
+						
+													<!-- <div class="results"> results will go here</div>  -->
+						
+										</div>
+										
+						
+									</fieldset>
+									<!-- <a href="https://docs.google.com/spreadsheets/d/1Q7OrRTByqyPn2sInibfRSkfTN1QtTolZTwR07L2QG3E/edit?usp=sharing" target="_blank">View the Google Sheet</a> -->
+									<!-- <a href="https://github.com/jamiewilson/form-to-google-sheets" target="_blank">View on GitHub</a> -->
+								
+									<!-- <div>
+										<img class="rocket-ship" src="Images/Illustration_Valo_to_Space_RocketShip_Landing_Page_Q4_2019.svg"
+									</div> -->
+		
+									<!-- <div class="results"> results will go here</div>  -->
+		
+						</div>
+						
+					</div>
+				</div>
+
+						<!-- Spacer -->
+						<!-- <div class="w-2/12 hidden lg:block"></div> -->
+					
+					
+	
+				</fieldset>
+		</div>
 	</div>
+
+
+	
 
 		<!-- <fieldset class="gllpLatlonPicker">
 				<br/><br/>
@@ -49,7 +238,7 @@
 				
 			</fieldset> -->
 
-			<fieldset class="gllpLatlonPicker">
+			<!-- <fieldset class="gllpLatlonPicker">
 				<br/><br/>
 				<div class="gllpMap">Google Maps</div>
 				<br/>
@@ -96,19 +285,19 @@
 								<p class="js-error-duplicate is-hidden form-message">Sorry only one entry per person! You can have 3 diffrent people from the same office enter just be sure to use a diffrent email per entry.</p>
 							</div>
 			
-							<!-- <a href="https://docs.google.com/spreadsheets/d/1Q7OrRTByqyPn2sInibfRSkfTN1QtTolZTwR07L2QG3E/edit?usp=sharing" target="_blank">View the Google Sheet</a> -->
+							 <a href="https://docs.google.com/spreadsheets/d/1Q7OrRTByqyPn2sInibfRSkfTN1QtTolZTwR07L2QG3E/edit?usp=sharing" target="_blank">View the Google Sheet</a> -->
 							<!-- <a href="https://github.com/jamiewilson/form-to-google-sheets" target="_blank">View on GitHub</a> -->
 						
-							<div>
+							<!-- <div>
 								<img class="rocket-ship" src="Images/Illustration_Valo_to_Space_RocketShip_Landing_Page_Q4_2019.svg"
-							</div>
+							</div> -->
 
 							<!-- <div class="results"> results will go here</div>  -->
 
-				</div>
+				<!-- </div> -->
 				
 
-			</fieldset>
+			<!-- </fieldset> --> -->
 
 		
 
@@ -129,8 +318,16 @@
 
 						
 						form.addEventListener('submit', e => {
+
+							var emailMatched = 
+
 							e.preventDefault()
 							getCurrentEmail()
+							emailMatches()
+								// Push the Boolean response to emailMatched var
+								console.log(emails.every(emailMatches));
+							emailMatched = emails.every(emailMatches);		
+
 							compareEmails()
 							showLoadingIndicator()
 							// fetch(scriptURL, { method: 'POST', body: new FormData(form)})
@@ -140,21 +337,38 @@
 							//Compare currentEmail to array 
 							function compareEmails(){
 								//Compare
-							for (i=0; i < emails.length; i++){
-							console.log(emails[i]);
+							// for (i=0; i < emails.length; i++){
+							// console.log(emails[i]);
+							// //if there is a match show error message
+							// if (currentEmail == emails[i]) {
+							// 	console.log("uh oh there's a match")
+							// 	showErrorDuplicateEmail();
+							// 	//if no matching emails Post data and show success Message
+							// 	} else {
+							// 		console.log("good no matching emails")
+							// 		fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+							// 	.then(response => showSuccessMessage(response))
+							// 	.catch(error => showErrorMessage(error))
+							// 	}
+	
+							// }
+
+							
+							
 							//if there is a match show error message
-							if (currentEmail == emails[i]) {
+							if (emailMatched === true) {
 								console.log("uh oh there's a match")
 								showErrorDuplicateEmail();
 								//if no matching emails Post data and show success Message
-								} else {
+								} else if (emailMatched === false){
 									console.log("good no matching emails")
 									fetch(scriptURL, { method: 'POST', body: new FormData(form)})
 								.then(response => showSuccessMessage(response))
 								.catch(error => showErrorMessage(error))
 								}
-	
-							}
+
+							
+
 						}
 							
 						})
@@ -231,14 +445,32 @@
 						//End  data fetch to compare var currentEmail
 // *************************************************************
 
+
+// *************************************************************
+						//Get the user input and put it in the currentEmail 
+// *************************************************************
 						// push user input into var currentEmail
 						function getCurrentEmail(){
 							var text = document.getElementById("userEmail").value;
 							console.log(text)
 							currentEmail = 'email: ' + text
 
-							//TODO: push to current email var
 						}
+// *************************************************************
+						//End Get the user input and put it in the currentEmail 
+// *************************************************************
+
+
+// *************************************************************
+						//compare for matches return a Boolean
+// *************************************************************
+						//Check to see if any of the emails matched
+						function emailMatches (currentValue) {
+								return currentValue === currentEmail;
+							}	
+// *************************************************************
+						//compare for matches return a Boolean
+// *************************************************************	
 
 						//Compare currentEmail to array 
 						// function compareEmails(){
