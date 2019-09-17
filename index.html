@@ -47,7 +47,10 @@
 					<!-- Map -->
 					<div class="sm:w-full lg:w-1/2 pl:8 md:pl-16 hidden lg:block">
 						<p class="text-left mb-12 max-w-lg mx-auto">2019 marks the VALO curing light’s 10th anniversary, and to celebrate, we sent a VALO light into space! Guess where it landed for your chance to win a FREE VALO light! Just click where you think it landed on the map below and then enter in your office information. Whoever guesses the closest location wins a VALO curing light!</p>
-						<div class="gllpMap">Google Maps</div>
+						<div onclick="showMap()" class ="instructions">
+								<img src="Images/Map_gif.gif">
+							</div>
+						<div  class="gllpMap hidden">Google Maps</div>
 						<p class="text-left mt-8 max-w-lg mx-auto"> Click and drag the pointer on the map to move the marker and guess where the VALO<sup>&trade;</sup> landed. <br> *Note: the starting place of the marker is placed at lift-off of the VALO<sup>&trade;</sup></p>
 						<br/>
 					</div>
@@ -139,6 +142,7 @@
 						
 									<fieldset class="gllpLatlonPicker">
 										<br/><br/>
+										
 										<div class="gllpMap">Google Maps</div>
 										<br/>
 										<div class="rocket">
@@ -153,7 +157,7 @@
 						
 															<div class="form-map">
 																	<p class="form-title">Latitude</p>
-																	<input class="gllpLatitude" name="LAT" value="40.5657534" type="text" placeholder="Lattitude" required>
+																	<input disabled class="gllpLatitude" name="LAT" value="40.5657534" type="text" placeholder="Lattitude" required>
 																	<p class="form-title">Longitude</p>
 																	<input class="gllpLongitude" value="-111.9062161" name="LONG" type="text" placeholder="Longitude" required>
 						
@@ -311,11 +315,19 @@
 						const errorMessage = document.querySelector('.js-error-message')
 						const errorDuplicateEmail = document.querySelector('.js-error-duplicate')
 
+						const instructions = document.querySelector('.instructions')
+						const map = document.querySelector('.gllpMap')
+
 						var emails = []
 						var currentEmail = ""
 
+						//click to reveal map
 
-
+						
+						function showMap () {
+							instructions.classList.add('hidden')
+							map.classList.remove('hidden')
+						}
 						
 						form.addEventListener('submit', e => {
 
