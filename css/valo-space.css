@@ -76,7 +76,7 @@ input{
 /* md-lg */
 @media screen and (min-width: 900px) {
   .gllpMap	{ 
-    width: 600px; 
+    width: 500px; 
     height: 400px; 
     margin-left: auto; 
     margin-right: auto;
@@ -167,6 +167,13 @@ button {
 
 button:hover {
   background-color: var(--accent);
+}
+
+.instructions {
+  
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
 }
 
 .is-hidden {
