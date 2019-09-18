@@ -29,22 +29,82 @@
 <!-- AJAX Request sent to -->
 <!-- https://script.google.com/macros/s/AKfycbx3vNK9UjmmDV7toGNM9I7J6DuccAYsXlBAbxaj3GoUS-Rup7c/exec -->
 
-<body >
-		<div class="stars pb:0 md:py-16 bg-white bg-cover bg-center bg-no-repeat">
+<body class="stars" >
+
+	<!-- Success Message -->
+		<div class="js-success-message is-hidden pb:0">
+				<div class="w-max mx-auto pb-0 md:pb-8">
+						<div class="space-content">
+								<div
+								class="w-full float-none sm:float-left px-4 pt-8 pb-0 sm:py-8 mx-0 ">
+								<div>
+										<h1>Thank You!</h1>
+										<p>We’ve recorded your pin drop!</p>
+										<p>Does someone else in your office have a guess?*</p>
+										<p class="mt-8 mb-8"><a class="link-button" href="https://www.ultradent.com/products/categories/equipment/curing-lights">Shop VALO</a><a class="link-button" href="/index.html"> Guess again</a></p>
+										<p>*Each office can submit up to three entries. One entry per person.</p>
+						
+								</div>
+						</div>
+						</div>
+					</div>
+		</div>
+		<!-- General Error -->
+		<div class="js-error-message is-hidden pb:0">
+				<div class="w-max mx-auto pb-0 md:pb-8">
+						<div class="space-content">
+								<div
+								class="w-full float-none sm:float-left px-4 pt-8 pb-0 sm:py-8 mx-0 ">
+								<div>
+										<h1>Oh No!</h1>
+										<p>there was a problem please try submitting again later!</p>
+										<p class="mt-8 mb-8"><a class="link-button" href="https://www.ultradent.com/products/categories/equipment/curing-lights">Shop VALO</a><a class="link-button" href="/index.html">Try Again</a></p>
+								</div>
+						</div>
+						</div>
+					</div>
+		</div>
+			<!-- One entry Error -->
+			<div class="js-error-duplicate is-hidden pb:0">
+					<div class="w-max mx-auto pb-0 md:pb-8">
+							<div class="space-content">
+									<div
+									class="w-full float-none sm:float-left px-4 pt-8 pb-0 sm:py-8 mx-0 ">
+									<div>
+											<h1>Oh No!</h1>
+											<p>Sorry only one entry per person! You can have 3 diffrent people from the same office enter just be sure to use a diffrent email per entry.</p>
+											<p class="mt-8 mb-8"><a class="link-button" href="https://www.ultradent.com/products/categories/equipment/curing-lights">Shop VALO</a><a class="link-button" href="/index.html">Try Again</a></p>
+									</div>
+							</div>
+							</div>
+						</div>
+			</div>
+
+		
+		
+		
+
+		<div class="page-hide stars pb:0 md:py-16 bg-white bg-cover bg-center bg-no-repeat">
 				<div class="w-max mx-auto pb-0 md:pb-8">
 						<div class="space-content">
 
 								<div
-								class=" w-full float-none sm:float-left px-4 pt-8 pb-0 sm:py-8 mx-0">
+								class="w-full  float-none sm:float-left px-4 pt-8 pb-0 sm:py-8 mx-0">
 								<div>
 										<h1> Can you guess where the VALO light landed?</h1>
 
 								</div>
 						</div>
 
+						<div class="w-full clearfix">
+							</div>
+
+						
+
+
 						<fieldset class="gllpLatlonPicker">
 								<div
-										class=" w-full md:w-1/2 float-none sm:float-left px-4 pt-8 pb-0 sm:py-8 mx-0">
+										class=" w-full lg:w-1/2  float-none sm:float-left px-4 pt-8 pb-0 sm:py-8 mx-0">
 										<div>
 												<p class="text-left mb-12 max-w-lg mx-auto">2019 marks the VALO curing light’s 10th anniversary, and to celebrate, we sent a VALO light into space! Guess where it landed for your chance to win a FREE VALO light! Just click where you think it landed on the map below and then enter in your office information. Whoever guesses the closest location wins a VALO curing light!</p>
 												<div onclick="showMap()" class ="instructions ">
@@ -54,10 +114,12 @@
 												<p class="text-left mt-8 max-w-lg mx-auto"> Click and drag the pointer on the map to move the marker and guess where the VALO<sup>&trade;</sup> landed. <br> *Note: the starting place of the marker is placed at lift-off of the VALO<sup>&trade;</sup></p>
 												<br/>
 										</div>
+										<div class="w-full clearfix">
+											</div>
 								</div>
 
 								<div
-								class="w-full md:w-1/2 float-none sm:float-left px-4 pt-8 pb-0 sm:py-8 mx-0">
+								class="w-full lg:w-1/2 float-none sm:float-left px-4 pt-8 pb-0 sm:py-8 mx-0">
 								<div>
 										<div class="form-container">
 												<form name="submit-to-google-sheet">
@@ -96,12 +158,14 @@
 													</div>
 												</div>
 										
-												<p class="js-success-message is-hidden form-message">Success!</p>
-												<p class="js-error-message is-hidden form-message">Error!</p>
-												<p class="js-error-duplicate is-hidden form-message">Sorry only one entry per person! You can have 3 diffrent people from the same office enter just be sure to use a diffrent email per entry.</p>
+												<!-- <p class="js-success-message is-hidden form-message">Success!</p> -->
+												<!-- <p class="js-error-message is-hidden form-message">Error!</p>
+												<p class="js-error-duplicate is-hidden form-message">Sorry only one entry per person! You can have 3 diffrent people from the same office enter just be sure to use a diffrent email per entry.</p> -->
 											</div>
 
 								</div>
+								<div class="w-full clearfix">
+									</div>
 						</div>
 					</fieldset>
 		</div>
@@ -186,7 +250,7 @@
 				<!-- </div> -->
 				
 
-			<!-- </fieldset> --> -->
+			<!-- </fieldset> --> 
 
 		
 
@@ -195,6 +259,7 @@
 					<script>
 						const scriptURL = 'https://script.google.com/macros/s/AKfycbyI8Xr6LKoFPmV2c1eq6SR-2WDcAcTIBFxjX8XH5BBlKQGOst4/exec'
 						const form = document.forms['submit-to-google-sheet']
+						const page = document.querySelector('.page-hide')
 						const loading = document.querySelector('.js-loading')
 						const successMessage = document.querySelector('.js-success-message')
 						const errorMessage = document.querySelector('.js-error-message')
@@ -285,7 +350,7 @@
 						// }
 
 						function showLoadingIndicator () {
-							form.classList.add('is-hidden')
+							page.classList.add('is-hidden')
 							loading.classList.remove('is-hidden')
 						}
 				
