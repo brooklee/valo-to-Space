@@ -28,7 +28,8 @@ h2 {
 }
 
 p {
-  text-align: center
+  text-align: center;
+font-size: 1em;
 }
 
 input{
@@ -57,7 +58,7 @@ input{
 
 /* If the map DIV doesn't have a size set up, it won't appear on the page */
 .gllpMap	{ 
-  width: 400px; 
+  width: 300px; 
   height: 300px; 
   margin-left: auto; 
   margin-right: auto;
@@ -66,7 +67,7 @@ input{
 /* md */
 @media screen and (min-width: 768px) {
   .gllpMap	{ 
-    width: 600px; 
+    width: 300px; 
     height: 400px; 
     margin-left: auto; 
     margin-right: auto;
@@ -86,7 +87,7 @@ input{
 /* lg */
 @media screen and (min-width: 1024px) {
   .gllpMap	{ 
-    width: 500px; 
+    width: 600px; 
     height: 400px; 
     margin-left: auto; 
     margin-right: auto;
