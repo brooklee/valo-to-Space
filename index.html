@@ -32,15 +32,9 @@
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
 }
 
-
-
-
-
 .grid-element {
-  background-color: deepPink;
+  
   padding: 20px;
-  color: #fff;
-  border: 1px solid #fff;
 }
 
 	</style>
@@ -55,71 +49,101 @@
 <!-- https://script.google.com/macros/s/AKfycbx3vNK9UjmmDV7toGNM9I7J6DuccAYsXlBAbxaj3GoUS-Rup7c/exec -->
 
 <body class="stars" >
+	<div class="page-hide ">
+			<div class="grid-container grid-container--fit">
+					<div class="grid-element">
+						<h1> Can you guess where the VALO light landed?</h1>
+						<p>2019 marks the VALO curing light’s 10th anniversary, and to celebrate, we sent a VALO light into space! Guess where it landed for your chance to win a FREE VALO light! Just click where you think it landed on the map below and then enter in your office information. Whoever guesses the closest location wins a VALO curing light!</p>
 
-		<fieldset class="gllpLatlonPicker">
-				<div class="grid-container grid-container--fit">
-						<div class="grid-element">
-								<p class="text-left mb-12 max-w-lg mx-auto">2019 marks the VALO curing light’s 10th anniversary, and to celebrate, we sent a VALO light into space! Guess where it landed for your chance to win a FREE VALO light! Just click where you think it landed on the map below and then enter in your office information. Whoever guesses the closest location wins a VALO curing light!</p>
-								<div onclick="showMap()" class ="instructions ">
-										<img src="Images/Map_gif_instructions.gif">
-									</div>
-								<div  class="gllpMap is-hidden ">Google Maps</div>
-								<p class="text-left mt-8 max-w-lg mx-auto"> Click and drag the pointer on the map to move the marker and guess where the VALO<sup>&trade;</sup> landed. <br> *Note: the starting place of the marker is placed at lift-off of the VALO<sup>&trade;</sup></p>
-								<br/>
-			
 						</div>
-						<div class="grid-element">
-								<div class="form-container">
-										<form name="submit-to-google-sheet">
-											<p class="form-title">Email</p>
-											<input id="userEmail" name="email" type="email" placeholder="Email" required>
-											<p class="form-title">First Name</p>
-											<input name="firstName" type="text" placeholder="First Name" required>
-											<p class="form-title">Last Name</p>
-											<input name="lastName" type="text" placeholder="Last Name" required>
-			
-											<div class="form-map">
-													<p class="form-title">Latitude</p>
-													<input class="gllpLatitude" name="LAT" value="40.5657534" type="text" placeholder="Lattitude" required>
-													<p class="form-title">Longitude</p>
-													<input class="gllpLongitude" value="-111.9062161" name="LONG" type="text" placeholder="Longitude" required>
-			
-													<input  type="button" class="gllpUpdateButton" value="update map">
-											</div>
-										
-											<p class="form-title">Office</p>
-											<p class="form-title"></p>
-											<input name="office" type="text" placeholder="Office Name" required>
-											<p class="form-title">City</p>
-											<input name="city" type="text" placeholder="city" required>
-											<p class="form-title">State</p>
-											<input name="state" type="text" placeholder="State" required>
-											<p class="form-title">Country</p>
-											<input name="country" type="text" placeholder="Country" required>
-											<input style="display: none;" type="text" class="gllpZoom" value="7"/>
-											<button id="submit" class="button" type="submit">Submit</button>
-										</form>
-								
-										<div class="loading js-loading is-hidden">
-											<div class="loading-spinner">
-												<svg><circle cx="25" cy="25" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/></svg>
-											</div>
+			</div>
+			<fieldset class="gllpLatlonPicker">
+					
+					<div class="grid-container grid-container--fit">
+							<div class="grid-element">
+									<div onclick="showMap()" class ="instructions ">
+											<img src="Images/Map_gif_instructions.gif" style="width:100%;">
 										</div>
-								
-										<!-- <p class="js-success-message is-hidden form-message">Success!</p> -->
-										<!-- <p class="js-error-message is-hidden form-message">Error!</p>
-										<p class="js-error-duplicate is-hidden form-message">Sorry only one entry per person! You can have 3 diffrent people from the same office enter just be sure to use a diffrent email per entry.</p> -->
-									</div>
-						</div>
-					 
-					</div>
+									<div  class="gllpMap is-hidden ">Google Maps</div>
+									<p> Click and drag the pointer on the map to move the marker and guess where the VALO<sup>&trade;</sup> landed. <br> *Note: the starting place of the marker is placed at lift-off of the VALO<sup>&trade;</sup></p>
+									<br><br>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-		</fieldset>
+									<br/>
+				
+							</div>
+							<div class="grid-element">
+									<div class="form-container">
+											<form name="submit-to-google-sheet">
+												<p class="form-title">Email</p>
+												<input id="userEmail" name="email" type="email" placeholder="Email" required>
+												<p class="form-title">First Name</p>
+												<input name="firstName" type="text" placeholder="First Name" required>
+												<p class="form-title">Last Name</p>
+												<input name="lastName" type="text" placeholder="Last Name" required>
+				
+												<div class="form-map">
+														<p class="form-title">Latitude</p>
+														<input class="gllpLatitude" name="LAT" value="40.5657534" type="text" placeholder="Lattitude" required>
+														<p class="form-title">Longitude</p>
+														<input class="gllpLongitude" value="-111.9062161" name="LONG" type="text" placeholder="Longitude" required>
+				
+														<input  type="button" class="gllpUpdateButton" value="update map">
+												</div>
+											
+												<p class="form-title">Office</p>
+												<p class="form-title"></p>
+												<input name="office" type="text" placeholder="Office Name" required>
+												<p class="form-title">City</p>
+												<input name="city" type="text" placeholder="city" required>
+												<p class="form-title">State</p>
+												<input name="state" type="text" placeholder="State" required>
+												<p class="form-title">Country</p>
+												<input name="country" type="text" placeholder="Country" required>
+												<input style="display: none;" type="text" class="gllpZoom" value="7"/>
+												<button id="submit" class="button" type="submit">Submit</button>
+											</form>
+									
+											<div class="loading js-loading is-hidden">
+												<div class="loading-spinner">
+													<svg><circle cx="25" cy="25" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/></svg>
+												</div>
+											</div>
+									
+											<!-- <p class="js-success-message is-hidden form-message">Success!</p> -->
+											<!-- <p class="js-error-message is-hidden form-message">Error!</p>
+											<p class="js-error-duplicate is-hidden form-message">Sorry only one entry per person! You can have 3 diffrent people from the same office enter just be sure to use a diffrent email per entry.</p> -->
+										</div>
+							</div>
+						 
+						</div>
+	
+			</fieldset>
+	</div>
+	
 		
 
 	<!-- Success Message -->
-		<div class="js-success-message is-hidden pb:0">
-				<div class="w-max mx-auto pb-0 md:pb-8">
+		<div class="js-success-message is-hidden">
+
+				<div class="grid-container grid-container--fit">
+						<div class="grid-element">
+								<h1>Thank You!</h1>
+							
+									
+									
+								<p>We’ve recorded your pin drop!</p>
+										<p>Does someone else in your office have a guess?*</p>
+										<p><a class="link-button" href="https://www.ultradent.com/products/categories/equipment/curing-lights">Shop VALO</a><a class="link-button" href="https://brooklee1.github.io/valo-to-Space/"> Guess again</a></p>
+										<p>*Each office can submit up to three entries. One entry per person.</p>
+								<br/>
+						</div>
+						</div>
+						
+					 
+					</div>
+
+				<!-- <div class="">
 						<div class="space-content">
 								<div
 								class="w-full float-none sm:float-left px-4 pt-8 pb-0 sm:py-8 mx-0 ">
@@ -133,7 +157,7 @@
 								</div>
 						</div>
 						</div>
-					</div>
+					</div> -->
 		</div>
 		<!-- General Error -->
 		<div class="js-error-message is-hidden pb:0">
@@ -170,93 +194,7 @@
 		
 		
 
-		<div class="page-hide stars pb:0 md:py-16 bg-white bg-cover bg-center bg-no-repeat">
-				<div class="w-max mx-auto pb-0 md:pb-8">
-						<div class="space-content">
 
-								<div
-								class="w-full  float-none sm:float-left px-4 pt-8 pb-0 sm:py-8 mx-0">
-								<div>
-										<h1> Can you guess where the VALO light landed?</h1>
-
-								</div>
-						</div>
-
-						<div class="w-full clearfix">
-							</div>
-
-						
-
-
-						<fieldset class="gllpLatlonPicker">
-								<div
-										class=" w-full lg:w-1/2  float-none sm:float-left px-4 pt-8 pb-0 sm:py-8 mx-0">
-										<div>
-												<p class="text-left mb-12 max-w-lg mx-auto">2019 marks the VALO curing light’s 10th anniversary, and to celebrate, we sent a VALO light into space! Guess where it landed for your chance to win a FREE VALO light! Just click where you think it landed on the map below and then enter in your office information. Whoever guesses the closest location wins a VALO curing light!</p>
-												<div onclick="showMap()" class ="instructions ">
-														<img src="Images/Map_gif_instructions.gif">
-													</div>
-												<div  class="gllpMap is-hidden">Google Maps</div>
-												<p class="text-left mt-8 max-w-lg mx-auto"> Click and drag the pointer on the map to move the marker and guess where the VALO<sup>&trade;</sup> landed. <br> *Note: the starting place of the marker is placed at lift-off of the VALO<sup>&trade;</sup></p>
-												<br/>
-										</div>
-										<div class="w-full clearfix">
-											</div>
-								</div>
-
-								<div
-								class="w-full lg:w-1/2 float-none sm:float-left px-4 pt-8 pb-0 sm:py-8 mx-0">
-								<div>
-										<div class="form-container">
-												<form name="submit-to-google-sheet">
-													<p class="form-title">Email</p>
-													<input id="userEmail" name="email" type="email" placeholder="Email" required>
-													<p class="form-title">First Name</p>
-													<input name="firstName" type="text" placeholder="First Name" required>
-													<p class="form-title">Last Name</p>
-													<input name="lastName" type="text" placeholder="Last Name" required>
-				
-													<div class="form-map">
-															<p class="form-title">Latitude</p>
-															<input class="gllpLatitude" name="LAT" value="40.5657534" type="text" placeholder="Lattitude" required>
-															<p class="form-title">Longitude</p>
-															<input class="gllpLongitude" value="-111.9062161" name="LONG" type="text" placeholder="Longitude" required>
-				
-															<input  type="button" class="gllpUpdateButton" value="update map">
-													</div>
-												
-													<p class="form-title">Office</p>
-													<p class="form-title"></p>
-													<input name="office" type="text" placeholder="Office Name" required>
-													<p class="form-title">City</p>
-													<input name="city" type="text" placeholder="city" required>
-													<p class="form-title">State</p>
-													<input name="state" type="text" placeholder="State" required>
-													<p class="form-title">Country</p>
-													<input name="country" type="text" placeholder="Country" required>
-													<input style="display: none;" type="text" class="gllpZoom" value="7"/>
-													<button id="submit" class="button" type="submit">Submit</button>
-												</form>
-										
-												<div class="loading js-loading is-hidden">
-													<div class="loading-spinner">
-														<svg><circle cx="25" cy="25" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/></svg>
-													</div>
-												</div>
-										
-												<!-- <p class="js-success-message is-hidden form-message">Success!</p> -->
-												<!-- <p class="js-error-message is-hidden form-message">Error!</p>
-												<p class="js-error-duplicate is-hidden form-message">Sorry only one entry per person! You can have 3 diffrent people from the same office enter just be sure to use a diffrent email per entry.</p> -->
-											</div>
-
-								</div>
-								<div class="w-full clearfix">
-									</div>
-						</div>
-					</fieldset>
-		</div>
-	</div>
-</div>
 
 	
 

@@ -19,8 +19,23 @@ body {
 h1 {
   text-align: center;
   text-transform: uppercase;
-  font-size: 2em; 
+  font-size: 50px; 
   font-weight: 700;
+max-width: 600px;
+margin-right: auto;
+margin-left: auto;
+}
+@media screen and (min-width: 768px) {
+  h1	{ 
+    font-size: 50px;
+  }
+}
+
+/* md */
+@media screen and (min-width: 900px) {
+  h1 {
+    font-size: 40px ; 
+  }
 }
 
 h2 {
@@ -28,12 +43,21 @@ h2 {
 }
 
 p {
-  text-align: center;
+  text-align: left;
 font-size: 1em;
+max-width: 600px;
+margin-right: auto;
+margin-left: auto;
+
 }
 
 input{
   max-width: 300px;
+}
+
+fieldset {
+  border-width: 0px;
+    border-style: none;
 }
 
 .gllpUpdateButton {
@@ -77,7 +101,7 @@ input{
 /* md-lg */
 @media screen and (min-width: 900px) {
   .gllpMap	{ 
-    width: 500px; 
+    width: 700px; 
     height: 400px; 
     margin-left: auto; 
     margin-right: auto;
@@ -87,7 +111,7 @@ input{
 /* lg */
 @media screen and (min-width: 1024px) {
   .gllpMap	{ 
-    width: 600px; 
+    width: 500px; 
     height: 400px; 
     margin-left: auto; 
     margin-right: auto;
