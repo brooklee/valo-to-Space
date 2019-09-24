@@ -61,6 +61,12 @@ fieldset {
   border-width: 0px;
     border-style: none;
 }
+.center{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
 .logo{
   display: block;
   margin-left: auto;
@@ -198,6 +204,10 @@ button {
   background-color: var(--purple);
 }
 
+button:hover {
+  background-color: var(--accent);
+}
+
 .link-button {
   background-color: #fff;
   color:var(--accent);;
@@ -206,9 +216,12 @@ button {
   margin:10px;
 }
 
-button:hover {
-  background-color: var(--accent);
+.link-button:hover {
+  background-color:var(--accent);
+  color: #fff
 }
+
+
 
 .instructions {
   display: block;
@@ -266,6 +279,27 @@ button:hover {
    stroke-linecap: round;
    animation: dash 1.5s ease-in-out infinite;
  }
+/* Messages */
+ .outer {
+  display: table;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.middle {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.inner {
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+  /*whatever width you want*/
+}
 
 .rocket-ship{
   display: block;
