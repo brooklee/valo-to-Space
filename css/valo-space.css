@@ -21,21 +21,9 @@ h1 {
   text-transform: uppercase;
   font-size: 50px; 
   font-weight: 700;
-max-width: 600px;
+max-width: 800px;
 margin-right: auto;
 margin-left: auto;
-}
-@media screen and (min-width: 768px) {
-  h1	{ 
-    font-size: 50px;
-  }
-}
-
-/* md */
-@media screen and (min-width: 900px) {
-  h1 {
-    font-size: 40px ; 
-  }
 }
 
 h2 {
@@ -45,7 +33,7 @@ h2 {
 p {
   text-align: left;
 font-size: 1em;
-max-width: 600px;
+max-width: 800px;
 margin-right: auto;
 margin-left: auto;
 
@@ -58,6 +46,11 @@ input{
 fieldset {
   border-width: 0px;
     border-style: none;
+}
+.logo{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .gllpUpdateButton {
@@ -204,7 +197,7 @@ button:hover {
 }
 
 .instructions {
-  
+  display: block;
   margin-left: auto;
   margin-right: auto;
   width: 75%;
