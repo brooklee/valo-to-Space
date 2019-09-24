@@ -43,6 +43,20 @@ input{
   max-width: 300px;
 }
 
+.select-country {
+  border: none !important;
+  font-size: inherit !important;
+  background: #eee !important;
+  border-radius: 3px !important;
+  padding: 1rem !important;
+  width: 100% !important;
+  margin-bottom:20px !important;
+  max-width: 332px !important;
+  padding-top: 16px !important;
+  padding-bottom: 16px !important;
+
+}
+
 fieldset {
   border-width: 0px;
     border-style: none;

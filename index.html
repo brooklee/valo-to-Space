@@ -100,7 +100,16 @@
 												<p class="form-title">State</p>
 												<input name="state" type="text" placeholder="State" required>
 												<p class="form-title">Country</p>
-												<input name="country" type="text" placeholder="Country" required>
+												<!-- <input name="country" type="text" placeholder="Country" required> -->
+												<select class="select-country"  name="country" required>
+														<option value="United Ststes of America">United Ststes of America</option>
+														<option value="Brazil">Brazil</option>
+													</select>
+													<br>
+													<input style="width: auto;" type="checkbox" name="agree" value="Car" required
+													oninvalid="this.setCustomValidity('Please agree to terms and services')"
+													oninput="setCustomValidity('')"
+													> I agree to the <a href="#">Terms and Service</a> of the contest<br>
 												<input style="display: none;" type="text" class="gllpZoom" value="7"/>
 												<button id="submit" class="button" type="submit">Submit</button>
 											</form>
@@ -184,7 +193,7 @@
 									<div>
 											<h1>Oh No!</h1>
 											<p>Sorry only one entry per person! You can have 3 diffrent people from the same office enter just be sure to use a diffrent email per entry.</p>
-											<p class="mt-8 mb-8"><a class="link-button" href="https://www.ultradent.com/products/categories/equipment/curing-lights">Shop VALO</a><a class="link-button" href="https://brooklee1.github.io/valo-to-Space/">Try Again</a></p>
+											<p class=""><a class="link-button" href="https://www.ultradent.com/products/categories/equipment/curing-lights">Shop VALO</a><a class="link-button" href="https://brooklee1.github.io/valo-to-Space/">Try Again</a></p>
 									</div>
 							</div>
 							</div>
