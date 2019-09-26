@@ -211,6 +211,21 @@ button:hover {
   background-color: var(--accent);
 }
 
+.SeeMap {
+  background-color: #fff;
+  color:var(--accent);;
+  padding: 1em 1.5em;
+  text-decoration: none;
+  margin:10px;
+  width:200px
+}
+
+.SeeMap:hover {
+  background-color:var(--accent);
+  color: #fff;
+  cursor: pointer;
+}
+
 .link-button {
   background-color: #fff;
   color:var(--accent);;
@@ -221,7 +236,8 @@ button:hover {
 
 .link-button:hover {
   background-color:var(--accent);
-  color: #fff
+  color: #fff;
+  cursor: pointer;
 }
 
 

@@ -65,7 +65,7 @@
 									<div onclick="showMap()" class ="instructions ">
 											<img src="Images/Map_Gif_Instructions_V2.gif" style="width:100%;">
 										</div>
-										<p onclick="showMapInstructions()" class="SeeMap is-hidden"><a>See Map Instructions Again</a></p>
+										<p onclick="showMapInstructions()" class="SeeMap is-hidden button">See Map Instructions Again</p>
 									<div  class="gllpMap is-hidden ">Google Maps</div>
 									<p> 1. The form autopopulates “lat & Long” from the map so no need to fill it in once you pick from the map.
 											<br><br>
@@ -356,6 +356,7 @@
 
 						function showMapInstructions () {
 							map.classList.add('is-hidden')
+							SeeMap.classList.add('is-hidden')
 							instructions.classList.remove('is-hidden')
 						}
 						
