@@ -17,11 +17,13 @@ body {
 }
 
 h1 {
+  font-family: proxima-nova,sans-serif;
+font-weight: 100;
+font-style: normal;
   text-align: center;
   text-transform: uppercase;
   font-size: 50px; 
-  font-weight: 100;
-  letter-spacing: 5.1px;
+  letter-spacing: 4px;
 max-width: 800px;
 margin-right: auto;
 margin-left: auto;
