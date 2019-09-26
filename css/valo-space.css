@@ -212,12 +212,15 @@ button:hover {
 }
 
 .SeeMap {
-  background-color: #fff;
-  color:var(--accent);;
+  border-radius: 3px;
+  background-color:  var(--purple);
+  color: #fff;
   padding: 1em 1.5em;
   text-decoration: none;
   margin:10px;
-  width:200px
+  width:200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .SeeMap:hover {
@@ -227,6 +230,7 @@ button:hover {
 }
 
 .link-button {
+  border-radius: 3px;
   background-color: #fff;
   color:var(--accent);;
   padding: 1em 1.5em;
