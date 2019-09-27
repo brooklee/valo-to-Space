@@ -3,6 +3,7 @@
 <head>
 	<title>VALO in Space</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width">
 
 	<!-- Tailwind -->
 	<!-- <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet"> -->
@@ -37,6 +38,15 @@
   padding: 20px;
 }
 
+.center-grid-container{
+	height: 100%;
+  display: grid;
+}
+
+.center-me{
+	margin: auto;
+}
+
 	</style>
 
 	<script>		
@@ -68,7 +78,7 @@
 									<div  class="gllpMap is-hidden ">Google Maps</div>
 
 									<p onclick="showMapInstructions()" class="SeeMap is-hidden button">See Map Instructions Again</p>
-
+										<h2>helpful map hints</h2>
 									<p> 1. The form autopopulates “lat & Long” from the map so no need to fill it in once you pick from the map.
 											<br><br>
 											2.  The Marker starts at Lift-off
@@ -141,9 +151,9 @@
 		
 
 	<!-- Success Message -->
-		<div class="js-success-message is-hidden"  id="center">
+		<div class="js-success-message is-hidden grid-container grid-container--fit">
 
-				<div id="main">
+				<div class="grid-element">
 						<div>
 								<h1>Thank You!</h1>
 							
@@ -160,9 +170,9 @@
 					 
 					</div>
 
-				<div class="js-error-duplicate is-hidden" id="center">
+				<div class="js-error-duplicate is-hidden center-grid-container">
 
-				<div id="main">
+				<div class="center-me">
 						<div>
 							<img src="https://images.ctfassets.net/wfptrcrbtkd0/5ChXBRW6l5GGEUBe7JNJOT/ac99c96f070732d4f1e32bd149f76400/Valo_Logo_White_2019.svg" class="logo">
 							<h1>Oh No!</h1>
