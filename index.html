@@ -48,7 +48,7 @@
 <!-- AJAX Request sent to -->
 <!-- https://script.google.com/macros/s/AKfycbx3vNK9UjmmDV7toGNM9I7J6DuccAYsXlBAbxaj3GoUS-Rup7c/exec -->
 
-<body class="stars" id="top">
+<body class="stars" >
 	<div class="page-hide ">
 			<div class="grid-container grid-container--fit">
 					<div class="grid-element">
@@ -118,7 +118,7 @@
 													oninput="setCustomValidity('')"
 													> I agree to the <a href="#">Terms and Service</a> of the contest<br>
 												<input style="display: none;" type="text" class="gllpZoom" value="7"/>
-												<button href="#top" id="submit" class="button" type="submit">Submit</button>
+												<button id="submit" class="button" type="submit">Submit</button>
 											</form>
 									
 											<div class="loading js-loading is-hidden">
@@ -141,9 +141,9 @@
 		
 
 	<!-- Success Message -->
-		<div class="outter js-success-message is-hidden">
+		<div class="js-success-message is-hidden"  id="center">
 
-				<div class="inner-center">
+				<div id="main">
 						<div>
 								<h1>Thank You!</h1>
 							
@@ -197,10 +197,10 @@
 					</div> -->
 		</div>
 		<!-- General Error -->
-		<div class="outter js-error is-hidden">
+		<div class="js-error is-hidden"  id="center">
 
-				<div class="inner-center">
-						<div class=" ">
+				<div id="main">
+						<div>
 							<img src="https://images.ctfassets.net/wfptrcrbtkd0/5ChXBRW6l5GGEUBe7JNJOT/ac99c96f070732d4f1e32bd149f76400/Valo_Logo_White_2019.svg" class="logo">
 							<h1> Oh No!</h1>
 							<p class="center">there was a problem submitting your entry please try submitting again later!</p>
