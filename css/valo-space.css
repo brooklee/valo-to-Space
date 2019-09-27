@@ -104,7 +104,7 @@ fieldset {
 
 /* If the map DIV doesn't have a size set up, it won't appear on the page */
 .gllpMap	{ 
-  width: 300px; 
+  width: 450px; 
   height: 300px; 
   margin-left: auto; 
   margin-right: auto;
@@ -113,7 +113,7 @@ fieldset {
 /* md */
 @media screen and (min-width: 768px) {
   .gllpMap	{ 
-    width: 300px; 
+    width: 450px; 
     height: 400px; 
     margin-left: auto; 
     margin-right: auto;
@@ -142,6 +142,15 @@ fieldset {
 
 /* xl */
 @media screen and (min-width: 1300px) {
+  .gllpMap	{ 
+    width: 500px; 
+    height: 400px; 
+    margin-left: auto; 
+    margin-right: auto;
+  }
+}
+
+@media screen and (min-width: 1350px) {
   .gllpMap	{ 
     width: 700px; 
     height: 400px; 
