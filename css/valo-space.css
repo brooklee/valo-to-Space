@@ -244,10 +244,11 @@ button:hover {
   padding: 1em 1.5em;
   text-decoration: none;
   margin:10px;
+  transition: 0.3s;
 }
 
 .link-button:hover {
-  background-color:var(--accent);
+  background-color:var(--valoBlue);
   color: #fff;
   cursor: pointer;
 }
@@ -311,31 +312,18 @@ button:hover {
    animation: dash 1.5s ease-in-out infinite;
  }
 /* Messages */
- .outer {
-  display: table;
-  position: absolute;
-  top: 0;
-  left: 0;
+.outer {
   height: 100%;
-  width: 100%;
+  display: grid;
 }
-
-.middle {
-  display: table-cell;
-  vertical-align: middle;
-}
-
-.inner {
-  margin-left: auto;
-  margin-right: auto;
-  width: 400px;
-  /*whatever width you want*/
+.inner-center { /* thing to center */
+  position: relative;
 }
 
 .rocket-ship{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   
 }
