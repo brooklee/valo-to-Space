@@ -2,7 +2,7 @@
 
 :root {
   --accent: #2d005b ;
-  --purple: #00A1E4;;
+  --valoBlue: #00A1E4;
 }
 
 
@@ -64,6 +64,11 @@ fieldset {
   border-width: 0px;
     border-style: none;
 }
+
+::selection {
+  background:var(--valoBlue);
+}
+
 .center{
   display: block;
   margin-left: auto;
@@ -77,7 +82,7 @@ fieldset {
 }
 
 .gllpUpdateButton {
-  background-color: var(--purple);
+  background-color: var(--valoBlue);
   border: none;
   color: #fff;
   padding: 15px 32px;
@@ -88,6 +93,7 @@ fieldset {
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 .gllpUpdateButton:hover {
@@ -204,7 +210,8 @@ input:focus {
 button {
   color: #fff;
   cursor: pointer;
-  background-color: var(--purple);
+  background-color: var(--valoBlue);
+  transition: 0.3s;
 }
 
 button:hover {
@@ -213,7 +220,7 @@ button:hover {
 
 .SeeMap {
   border-radius: 3px;
-  background-color:  var(--purple);
+  background-color:  var(--valoBlue);
   color: #fff;
   padding: 1em 1.5em;
   text-decoration: none;
@@ -221,6 +228,7 @@ button:hover {
   width:200px;
   margin-left: auto;
   margin-right: auto;
+  transition: 0.3s;
 }
 
 .SeeMap:hover {
@@ -258,7 +266,7 @@ button:hover {
 }
 
 .form-message {
-  color: var(--purple);
+  color: var(--valoBlue);
 }
 
 @keyframes rotate {
