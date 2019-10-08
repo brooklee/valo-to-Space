@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+	<title>VALO in Space</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width">
+
+	<!-- Tailwind -->
+	<!-- <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet"> -->
+
+
+
+
+	<!-- Dependencies: JQuery and GMaps API should be loaded first -->
+	<script src="https://cdn.jsdelivr.net/gh/brooklee1/valo-to-Space/js/jquery-2.1.1.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyrJDHTdAiCLZqF0XgLP_PA0d7gmVEoAA&sensor=false"></script>
+
+
+
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh//brooklee1/valo-to-Space/css/valo-space.css"/>
+	<script src="https://cdn.jsdelivr.net/gh/brooklee1/valo-to-Space/js/jquery-gmaps-latlon-picker.js"></script>
+	<!-- <script src="js/valo-scripts.js"></script> -->
+	<style>
+
+		.grid-container {
+    display: grid;
+}
+
+.grid-container--fill {
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+}
+
+.grid-container--fit {
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+}
+@media screen and (min-width: 768px) {
+
+.grid-container--fit {
+  grid-template-columns: 60% 40%;
+    
+}
+}
+
+.grid-container--fit-title {
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+}
+
+.grid-element {
+  padding: 20px; 
+}
+
+.center-grid-container{
+	height: 100%;
+  display: grid;
+}
+.center-me{
+	margin-left:13%;
+}
+
+.video-thumbnail{
+
+}
+
+#modal-bg {
+ 	cursor: pointer;
+ 	display: none;
+ 	width: 100%;
+ 	height: 100vh;
+ 	background: rgba(0, 0, 0, 0.75);
+ 	position: fixed;
+ 	z-index: 10;
+ }
+
+	</style>
+
+	<script>		
+	</script>
+</head>
+
+<!-- aria-label="LONG" -->
+
+<!-- AJAX Request sent to -->
+<!-- https://script.google.com/macros/s/AKfycbx3vNK9UjmmDV7toGNM9I7J6DuccAYsXlBAbxaj3GoUS-Rup7c/exec -->
+
+<body class="stars" >
+	<div class="page-hide ">
+			<div class="grid-container grid-container--fit-title">
+					<div class="grid-element">
+                <img src="https://images.ctfassets.net/wfptrcrbtkd0/5ChXBRW6l5GGEUBe7JNJOT/ac99c96f070732d4f1e32bd149f76400/Valo_Logo_White_2019.svg" class="logo">
+						<h1> Can you guess where the <span style="font-weight: 700;">VALO<sup>&trade;</sup></span> light landed?</h1>
+						<p>2019 marks the VALO curing light’s 10th anniversary, and to celebrate, we sent a VALO light into space! Guess where it landed for your chance to win a FREE VALO light! Just click where you think it landed on the map below and then enter in your office information. Whoever guesses the closest location wins a VALO curing light!</p>
+
+						</div>
+			</div>
+			
+					
+					<div class="grid-container grid-container--fit">
+							<div class="grid-element">
+                  <img class="center-me" src="https://via.placeholder.com/700x400?text=Image+of+actual+landing" style="width:75%;">
+
+										<h2>helpful map hints</h2>
+									<p> 1. The form autopopulates “lat & Long” from the map so no need to fill it in once you pick from the map.
+											<br><br>
+											2.  The Marker starts at Lift-off
+											<br><br>
+											3. Hint: Stay west of the Mississippi river & east of California</p>
+									<br><br>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+									<br/>
+				
+              </div>
+              
+              <div class="grid-element">
+
+                
+                  <h2>Video Title</h2>
+                  <iframe  class="center-me" width="75%" height="400px" src="https://www.youtube.com/embed/At4OluUfE3M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                <!-- <img id="video_thumbnail_1" class="center-me"  src="https://via.placeholder.com/700x400?text=Video+thumbnail" style="width:75%;"> -->
+
+                <!-- <div id="inspire_video_wrapper" class="video-outer-wrapper-large" style="display:none">
+                    <div class="video-wrapper-large">
+                      <iframe id="inspire_video" allowfullscreen="" src="//www.youtube.com/embed/PivTeqRZ1xw?rel=0" width="100%" height="100%" frameborder="0"></iframe>
+                    </div>
+                  </div>
+           -->
+
+                <h2>Video Title 2</h2>
+                <iframe  class="center-me" width="75%" height="400px" src="https://www.youtube.com/embed/At4OluUfE3M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                <!-- <img class="center-me"  src="https://via.placeholder.com/700x400?text=Video+thumbnail" style="width:75%;"> -->
+
+               
+                   
+                <br/>
+      
+            </div>
+						 
+						</div>
+	
+		
+	</div>
+	
+	
+					
+				
+</body>
+<script>
+
+    // Finds all iframes from youtubes and gives them a unique class
+    jQuery('iframe[src*="https://www.youtube.com/embed/"]').addClass("youtube-iframe");
+
+jQuery("#modal-bg").click(function() {
+  // changes the iframe src to prevent playback or stop the video playback in our case
+  $('.youtube-iframe').each(function(index) {
+    $(this).attr('src', $(this).attr('src'));
+    return false;
+  });
+  
+//click function
+});
+
+
+$("#modal-bg").click(function() {
+				$("#modal-bg").css("display", "none");
+				$("#modal-1").addClass("modal_remove");
+				$("#modal-1").removeClass("modal_display");
+				$("#modal-2").addClass("modal_remove");
+				$("#modal-2").removeClass("modal_display");
+				$("#modal-3").addClass("modal_remove");
+				$("#modal-3").removeClass("modal_display");
+				$("#modal-4").addClass("modal_remove");
+				$("#modal-4").removeClass("modal_display");
+				$("#modal-5").addClass("modal_remove");
+				$("#modal-5").removeClass("modal_display");
+				$("#modal-6").addClass("modal_remove");
+				$("#modal-6").removeClass("modal_display");
+				$("#modal-7").addClass("modal_remove");
+				$("#modal-7").removeClass("modal_display");
+				$("#inspire_video_wrapper").css("display", "none");
+				$("#inspire_video")[0].src = "https://www.youtube.com/embed/PivTeqRZ1xw?autoplay=0";
+			});
+
+
+$("#inspire_video_wrapper").css("display", "none");
+        $("#inspire_video")[0].src = "https://www.youtube.com/embed/PivTeqRZ1xw?autoplay=0";
+        
+		$("#video_thumbnail_1").click(function() {
+				$("#modal-bg").css("display", "block");
+				$("#inspire_video_wrapper").css("display", "block");
+				$("#inspire_video")[0].src = "https://www.youtube.com/embed/PivTeqRZ1xw?autoplay=1";
+			});
+</script>
+</html>

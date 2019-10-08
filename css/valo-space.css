@@ -250,7 +250,7 @@ button:hover {
   border-radius: 3px;
   background-color: #fff;
   color:var(--accent);;
-  padding: 1em 1.5em;
+  padding: 15px 1.5em;
   text-decoration: none;
   margin:10px;
   transition: 0.3s;
