@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+
+<head>
+	<title>VALO in Space</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width">
+
+	<!-- Tailwind -->
+	<!-- <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet"> -->
+
+
+
+
+	<!-- Dependencies: JQuery and GMaps API should be loaded first -->
+	<script src="https://cdn.jsdelivr.net/gh/brooklee1/valo-to-Space/js/jquery-2.1.1.min.js"></script>
+	<script
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyrJDHTdAiCLZqF0XgLP_PA0d7gmVEoAA&sensor=false"></script>
+
+
+
+	<link rel="stylesheet" type="text/css"
+		href="https://cdn.jsdelivr.net/gh//brooklee1/valo-to-Space/css/valo-space.css" />
+	<script src="https://cdn.jsdelivr.net/gh/brooklee1/valo-to-Space/js/jquery-gmaps-latlon-picker.js"></script>
+	<!-- <script src="js/valo-scripts.js"></script> -->
+	<style>
+		.grid-container {
+			display: grid;
+		}
+
+		.grid-container--fill {
+			grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+		}
+
+		.grid-container--fit {
+			grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+		}
+
+		.grid-element {
+
+			padding: 20px;
+		}
+
+		.center-grid-container {
+			height: 100%;
+			display: grid;
+		}
+
+		.center-me {
+			margin: auto;
+		}
+	</style>
+
+	<script>
+	</script>
+</head>
+
+<!-- aria-label="LONG" -->
+
+<!-- AJAX Request sent to -->
+<!-- https://script.google.com/macros/s/AKfycbx3vNK9UjmmDV7toGNM9I7J6DuccAYsXlBAbxaj3GoUS-Rup7c/exec -->
+
+<body class="stars">
+
+	<!-- Main Page -->
+	<div class="page-hide ">
+		<div class="grid-container grid-container--fit">
+			<div class="grid-element">
+				<img
+					src="https://images.ctfassets.net/wfptrcrbtkd0/5ChXBRW6l5GGEUBe7JNJOT/ac99c96f070732d4f1e32bd149f76400/Valo_Logo_White_2019.svg"
+					class="logo">
+				<h1> Você consegue adivinhar onde o <span style="font-weight: 700;"> VALO<sup>&trade;</sup></span> pousou?</h1>
+				<p>Neste ano de 2019 o fotopolimerizador VALO completa 10 anos e para celebrar, enviamos um VALO para o espaço! Tente adivinhar onde ele pousou e concorra a um fotopolimerizador VALO. Para concorrer, basta clicar no mapa no lugar onde você acha que o VALO fez a sua aterrizagem de volta a terra e preencher o formulário com suas informações completas. Aquele(a) que marcar a localização mais perto no mapa de onde o VALO realmente pousou, ganhará um fotopolimerizador VALO! </p>
+
+			</div>
+		</div>
+		<fieldset class="gllpLatlonPicker">
+
+			<div class="grid-container grid-container--fit">
+				<div class="grid-element">
+					<div onclick="showMap()" class="instructions ">
+						<!-- <img
+							src="https://images.ctfassets.net/wfptrcrbtkd0/34EZgoMhHXiDRfAwqCUdzR/9677622f1bf925fc987aac8a99b0ab32/Map_Gif_Instructions_V2.gif"
+							style="width:100%;"> -->
+					</div>
+					<div class="gllpMap">Google Maps</div>
+
+					<p onclick="showMapInstructions()" class="SeeMap is-hidden button">See Map Instructions Again</p>
+					<h2>Dicas úteis sobre o mapa</h2>
+					<p> 1. O fomulário é preenchido automaticamente com os dados referentes a latitude e longitude do mapa.
+						<br><br>
+						2. A posição inicial do marcador no mapa indica de onde o VALO foi lançado. 
+						<br><br>
+						3. Dica. A área onde o VALO pousou fica do lado oeste do rio Mississípi e do lado leste da Califórnia  </p>
+					<br><br>
+					<p>O concurso começa dia 14 de outubro de 2019 às 11h00 (horário de Brasília) e termina na quinta-feira, dia 16 de outubro às 2h59 (horário de Brasília). O vencedor deve entrar em contato para receber seu prêmio dentro de 24 horas. O vencedor será contatado por telefone ou e-mail. Nós não divulgaremos nenhuma informação pessoal sem o consentimento do vencedor. </p>
+
+					<br />
+
+				</div>
+				<div class="grid-element">
+					<div class="form-container">
+						<form name="submit-to-google-sheet">
+							<p class="form-title">E-mail</p>
+							<input id="userEmail" name="email" type="email" placeholder="E-mail" required>
+							<p class="form-title">Nome</p>
+							<input name="firstName" type="text" placeholder="Nome" required>
+							<p class="form-title">Sobrenome </p>
+							<input name="lastName" type="text" placeholder="Sobrenome " required>
+
+							<div class="form-map">
+								<p class="form-title">Latitude</p>
+								<input class="gllpLatitude" name="LAT" value="40.5657534" type="text" placeholder="Latitude" required>
+								<p class="form-title">Longitude</p>
+								<input class="gllpLongitude" value="-111.9062161" name="LONG" type="text" placeholder="Longitude"
+									required>
+
+								<input type="button" class="gllpUpdateButton" value="Atualize o mapa">
+							</div>
+
+							<p class="form-title">Consultório</p>
+							<p class="form-title"></p>
+							<input name="office" type="text" placeholder="Consultório" required>
+							<!-- <p class="form-title">City</p>
+												<input name="city" type="text" placeholder="city" required> -->
+							<p class="form-title">Telefone</p>
+							<input name="phone" type="text" placeholder="Telefone" required>
+							<p class="form-title">País</p>
+							<!-- <input name="country" type="text" placeholder="Country" required> -->
+							<select class="select-country"  name="country" required>
+									<option value="United States of America">Estados Unidos da America</option>
+									<option value="LATAM - Argentina">Argentino</option>
+									<option value="ASIAPAC - Australia">Austrália</option>
+									<option value="Northern Europe - Austria">Áustria</option>
+									<option value="ASIAPAC - Bangladesh">Bangladesh</option>
+									<option value="Northern Europe - Belgium">Bélgica</option>
+									<option value="LATAM - Bolivia">Bolívia</option>
+									<option value="Brazil">Brasil</option>
+									<option value="Canada">Canadá</option>
+									<option value="LATAM - Chile">Chile</option>
+									<option value="LATAM - Colombia">Colômbia</option>
+									<option value="LATAM - Costa Rica">Costa Rica</option>
+									<option value="Northern Europe - Denmark">Dinamarca</option>
+									<option value="LATAM - Dominican Republic">República Dominicana</option>
+									<option value="LATAM - Ecuador">Equador</option>
+									<option value="LATAM - El Salvador">O salvador</option>	
+									<option value="Northern Europe - Finland">Finlândia</option>
+									<option value="Northern Europe - Germany">Alemanha</option>
+									<option value="ASIAPAC - Guam">Guam</option>
+									<option value="LATAM - Honduras">Honduras</option>
+									<option value="ASIAPAC - Hong Kong">Hong Kong</option>
+									<option value="ASIAPAC - India">Índio</option>
+									<option value="ASIAPAC - Indonesia">Indonésio</option>
+									<option value="LATAM - Jamaica">Jamaica</option>
+									<option value="Japan">Japão</option>
+									<option value="ASIAPAC - Kenya">Quênia</option>
+									<option value="ASIAPAC - Malaysia">Malásia</option>
+									<option value="ASIAPAC - Mauritius">Maurício</option>
+									<option value="LATAM - Mexico">México</option>
+									<option value="ASIAPAC - Myanmar">Myanmar</option>
+									<option value="ASIAPAC - Namibia">Namíbia</option>
+									<option value="Northern Europe - Netherlands">Países Baixos</option>
+									<option value="ASIAPAC - New Zealand">Nova Zelândia</option>
+									<option value="LATAM - Nicaragua">Nicarágua</option>
+									<option value="ASIAPAC - Nigeria">Nigéria</option>
+									<option value="Northern Europe - Norway">Noruega</option>
+									<option value="Northern Europe - Oman">Omán</option>
+									<option value="LATAM - Panama">Panamá</option>
+									<option value="LATAM - Paraguay">Paraguai</option>
+									<option value="LATAM - Peru">Peru</option>
+									<option value="ASIAPAC - Philippines">Filipinos</option>
+									<option value="LATAM - Puerto Rico">Porto Rico</option>
+									<option value="ASIAPAC - Senegal">Senegal</option>
+									<option value="ASIAPAC - South Africa">África do Sul</option>
+									<option value="ASIAPAC - South Korea">Coreia do Sul</option>
+									<option value="ASIAPAC - Sri Lanka">Sri Lanka</option>
+									<option value="Northern Europe - Sweden">Suécia</option>
+									<option value="Northern Europe - Switzerland">Suíço</option>
+									<option value="ASIAPAC - Taiwan">Taiwan</option>
+									<option value="ASIAPAC - Thailand">Tailândia</option>
+									<option value="LATAM - Trinidad">Trinidad</option>
+									<option value="ASIAPAC - Uganda">Uganda</option>
+									<option value="LATAM - Uruguay">Uruguai</option>	
+									<option value="LATAM - Venezuela">Venezuela</option>
+									<option value="ASIAPAC - Vietnam">Vietnã</option>
+								</select>
+							<br>
+							<input style="width: auto;" type="checkbox" name="agree" value="agree" required
+								oninvalid="this.setCustomValidity('Please agree to Terms and Conditions')"
+								oninput="setCustomValidity('')"> Eu li e concordo com os<a href="https://assets.ctfassets.net/wfptrcrbtkd0/5Q8ELKbxuc9nrGlO9zIKIs/3332628a2a1b7899d47fcd18b29b83d8/Valo_to_Space_Contest_Rules.pdf" target="_blank"> termos e condições</a><br><br>
+							<input style="width: auto;" type="checkbox" name="agree" value="agree" required
+								oninvalid="this.setCustomValidity('Please confirm')" oninput="setCustomValidity('')"> Eu confirmo que sou um Dentista licenciado e autorizado a clinicar seguindo as leis e regulamentações do país onde vivo.<br><br>
+							<input style="display: none;" type="text" class="gllpZoom" value="7" />
+							<button id="submit" class="button" type="submit">Enviar</button>
+						</form>
+
+						<div class="loading js-loading is-hidden">
+							<div class="loading-spinner">
+								<svg>
+									<circle cx="25" cy="25" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /></svg>
+							</div>
+						</div>
+
+						<!-- <p class="js-success-message is-hidden form-message">Success!</p> -->
+						<!-- <p class="js-error-message is-hidden form-message">Error!</p>
+											<p class="js-error-duplicate is-hidden form-message">Sorry only one entry per person! You can have 3 diffrent people from the same office enter just be sure to use a diffrent email per entry.</p> -->
+					</div>
+				</div>
+
+			</div>
+
+		</fieldset>
+	</div>
+
+
+
+	<!-- Success Message -->
+	<div class="js-success-message is-hidden grid-container grid-container--fit">
+
+		<div class="grid-element">
+			<div>
+				<img
+					src="https://images.ctfassets.net/wfptrcrbtkd0/5ChXBRW6l5GGEUBe7JNJOT/ac99c96f070732d4f1e32bd149f76400/Valo_Logo_White_2019.svg"
+					class="logo">
+
+				<h1>Obrigado!</h1>
+
+
+
+				<p style="text-align: center;">Sua marcação foi registrada com sucesso!</p>
+				<br><br>
+				<p style="text-align: center;"><a class="link-button"
+						href="https://intl.ultradent.com/es-la/Productos-Dentales/Equipment/Lampara-de-fotopolimerizacion-LED/Pages/default.aspx">Mais informações</a></p>
+				<br><br>
+				<p>O concurso começa dia 14 de outubro de 2019 às 11h00 (horário de Brasília) e termina na quinta-feira, dia 15 de outubro às 2h59 (horário de Brasília). O vencedor deve entrar em contato para receber seu prêmio dentro de 24 horas. O vencedor será contatado por telefone ou e-mail. Nós não divulgaremos nenhuma informação pessoal sem o consentimento do vencedor. </p>
+
+				<br />
+			</div>
+		</div>
+
+
+	</div>
+	<!-- Err Message  One Entry-->
+	<div class="js-error-duplicate is-hidden center-grid-container">
+
+		<div class="center-me">
+			<div>
+				<img
+					src="https://images.ctfassets.net/wfptrcrbtkd0/5ChXBRW6l5GGEUBe7JNJOT/ac99c96f070732d4f1e32bd149f76400/Valo_Logo_White_2019.svg"
+					class="logo">
+				<h1>Desculpe!</h1>
+				<p style="text-align: center;">Apenas um cadastro permitido por pessoa!</p>
+				<br>
+				<br>
+				<p style="text-align: center;"><a class="link-button"
+						href="https://intl.ultradent.com/es-la/Productos-Dentales/Equipment/Lampara-de-fotopolimerizacion-LED/Pages/default.aspx">Mais informações</a><a class="link-button" href=".">Tente novamente</a></p>
+				<br>
+				<br>
+			</div>
+		</div>
+
+
+	</div>
+
+	</div>
+	<!-- General Error -->
+	<div class="js-error is-hidden" id="center">
+
+		<div id="main">
+			<div>
+				<img
+					src="https://images.ctfassets.net/wfptrcrbtkd0/5ChXBRW6l5GGEUBe7JNJOT/ac99c96f070732d4f1e32bd149f76400/Valo_Logo_White_2019.svg"
+					class="logo">
+				<h1>Desculpe!</h1>
+				<p class="center">Tivemos um problema com seu cadastro. Por favor, tente novamente mais tarde!</p>
+				<br>
+				<br>
+				<p class="center"><a class="link-button"
+						href="https://intl.ultradent.com/es-la/Productos-Dentales/Equipment/Lampara-de-fotopolimerizacion-LED/Pages/default.aspx">Mais informações</a><a class="link-button" href=".">Tente novamente</a></p>
+			</div>
+		</div>
+
+
+	</div>
+
+
+
+	<!-- *****************************************-->
+	<!-- *****************************************-->
+	<!-- DANGER ZONE BELOW -->
+	<!-- DO NOT MAKE CHANGES PAST THIS MESSAGE -->
+	<!-- *****************************************-->
+	<!-- *****************************************-->
+	<script>
+		const scriptURL = 'https://script.google.com/macros/s/AKfycbyI8Xr6LKoFPmV2c1eq6SR-2WDcAcTIBFxjX8XH5BBlKQGOst4/exec'
+		const form = document.forms['submit-to-google-sheet']
+		const page = document.querySelector('.page-hide')
+		const loading = document.querySelector('.js-loading')
+		const successMessage = document.querySelector('.js-success-message')
+		const errorMessage = document.querySelector('.js-error-message')
+		const errorDuplicateEmail = document.querySelector('.js-error-duplicate')
+
+		const instructions = document.querySelector('.instructions')
+		const map = document.querySelector('.gllpMap')
+		const SeeMap = document.querySelector('.SeeMap')
+
+		var emails = []
+		var currentEmail = ""
+
+		// user email copy hack
+		function copyUserEmail(f) {
+			// getElementById('userEmailMobile').value = getElementById('userEmail').value;
+			f.name.value = f.emailMobile.value;
+		}
+
+
+
+		//click to reveal map
+
+
+		function showMap() {
+			instructions.classList.add('is-hidden')
+			map.classList.remove('is-hidden')
+			SeeMap.classList.remove('is-hidden')
+		}
+
+		function showMapInstructions() {
+			map.classList.add('is-hidden')
+			SeeMap.classList.add('is-hidden')
+			instructions.classList.remove('is-hidden')
+		}
+
+		form.addEventListener('submit', e => {
+
+			var emailMatched =
+
+				e.preventDefault()
+
+			getCurrentEmail()
+			emailMatches()
+			// Push the Boolean response to emailMatched var
+			// 	console.log(emails.every(emailMatches));
+			// emailMatched = emails.every(emailMatches);
+
+			console.log(emails.includes(currentEmail));
+			emailMatched = emails.includes(currentEmail)
+
+
+			compareEmails()
+			showLoadingIndicator()
+			// fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+			// 	.then(response => showSuccessMessage(response))
+			// 	.catch(error => showErrorMessage(error))
+
+			//Compare currentEmail to array 
+			function compareEmails() {
+				//Compare
+				// for (i=0; i < emails.length; i++){
+				// console.log(emails[i]);
+				// //if there is a match show error message
+				// if (currentEmail == emails[i]) {
+				// 	console.log("uh oh there's a match")
+				// 	showErrorDuplicateEmail();
+				// 	//if no matching emails Post data and show success Message
+				// 	} else {
+				// 		console.log("good no matching emails")
+				// 		fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+				// 	.then(response => showSuccessMessage(response))
+				// 	.catch(error => showErrorMessage(error))
+				// 	}
+
+				// }
+
+
+
+				//if there is a match show error message
+				if (emailMatched === true) {
+					console.log("uh oh there's a match")
+					showErrorDuplicateEmail();
+					//if no matching emails Post data and show success Message
+				} else if (emailMatched === false) {
+					console.log("good no matching emails")
+					fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+						.then(response => showSuccessMessage(response))
+						.catch(error => showErrorMessage(error))
+				}
+
+
+
+			}
+
+		})
+
+		// var getData = () => {
+		// 	fetch(scriptURL, { method: 'GET', body: FormData(form)})
+		// 		console.log ("fetched")
+		// }
+
+		function showLoadingIndicator() {
+			page.classList.add('is-hidden')
+			loading.classList.remove('is-hidden')
+		}
+
+		function showSuccessMessage(response) {
+			console.log('Success!', response, FormData)
+			setTimeout(() => {
+				successMessage.classList.remove('is-hidden')
+				loading.classList.add('is-hidden')
+			}, 500)
+		}
+
+		function showErrorMessage(error) {
+			console.error('Error!', error.message)
+			setTimeout(() => {
+				errorMessage.classList.remove('is-hidden')
+				loading.classList.add('is-hidden')
+			}, 500)
+		}
+
+		function showErrorDuplicateEmail() {
+			console.error('Error!')
+			setTimeout(() => {
+				errorDuplicateEmail.classList.remove('is-hidden')
+				loading.classList.add('is-hidden')
+			}, 500)
+		}
+
+		// *************************************************************
+		// data fetch to compare var currentEmail
+		// *************************************************************
+		// ID of SpreadSheet
+		// https://spreadsheets.google.com/feeds/list/1Q7OrRTByqyPn2sInibfRSkfTN1QtTolZTwR07L2QG3E/od6/public/basic?alt=json
+		var spreadsheetID = "1Q7OrRTByqyPn2sInibfRSkfTN1QtTolZTwR07L2QG3E";
+
+		// Make sure it is public or set to Anyone with link can view 
+		var url = "https://spreadsheets.google.com/feeds/list/" + spreadsheetID + "/od6/public/values?alt=json";
+
+		$.getJSON(url, function (data) {
+
+			var entry = data.feed.entry;
+
+			$(entry).each(function () {
+				// Column names are name, age, etc.
+				$('.results').prepend('<h2>' + this.content.$t + '</h2>');
+
+				//Grab the submitted information
+				var userInfo = this.content.$t
+
+				//split the Info into an Array
+				var userArray = userInfo.split(',')
+
+				//grab the user email information
+				var email = userArray[0]
+				console.log("Array of emails: " + email);
+				//push to emails arrary for comparison
+				emails.push(email)
+
+				// console.log($(this.content.$t).val().split(','))
+			});
+
+		});
+
+		// *************************************************************
+		//End  data fetch to compare var currentEmail
+		// *************************************************************
+
+
+		// *************************************************************
+		//Get the user input and put it in the currentEmail 
+		// *************************************************************
+		// push user input into var currentEmail
+		function getCurrentEmail() {
+			var text = document.getElementById("userEmail").value;
+			console.log(text)
+			currentEmail = 'email: ' + text
+
+		}
+		// *************************************************************
+		//End Get the user input and put it in the currentEmail 
+		// *************************************************************
+
+
+		// *************************************************************
+		//compare for matches return a Boolean
+		// *************************************************************
+		//Check to see if any of the emails matched
+		function emailMatches(currentValue) {
+			console.log("this is currentValue: " + currentValue);
+			return currentValue == currentEmail;
+		}
+// *************************************************************
+						//compare for matches return a Boolean
+// *************************************************************	
+
+						//Compare currentEmail to array 
+						// function compareEmails(){
+						// 	for (i=0; i < emails.length; i++){
+						// 	console.log(emails[i]);
+						// 	if (currentEmail == emails[i]) {
+						// 		console.log("uh oh there's a match")
+						// 		} else {
+						// 			console.log("good no matching emails")
+						// 		}
+
+						// 	}
+						// }
+
+
+
+
+						// TODO: compare duplicate emails
+						// TODO: send Message to user
+						// TODO: Remove most recent entry from spreadsheet
+
+	</script>
+
+</body>
+<script>
+
+</script>
+
+</html>

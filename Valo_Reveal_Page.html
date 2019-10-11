@@ -8,8 +8,8 @@
 	<!-- Tailwind -->
 	<!-- <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet"> -->
 
-
-
+  
+  
 
 	<!-- Dependencies: JQuery and GMaps API should be loaded first -->
 	<script src="https://cdn.jsdelivr.net/gh/brooklee1/valo-to-Space/js/jquery-2.1.1.min.js"></script>
@@ -18,7 +18,10 @@
 
 
 	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh//brooklee1/valo-to-Space/css/valo-space.css"/>
-	<script src="https://cdn.jsdelivr.net/gh/brooklee1/valo-to-Space/js/jquery-gmaps-latlon-picker.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/brooklee1/valo-to-Space/js/jquery-gmaps-latlon-picker.js"></script>
+  
+  
+
 	<!-- <script src="js/valo-scripts.js"></script> -->
 	<style>
 
@@ -57,24 +60,119 @@
 	margin-left:13%;
 }
 
-.video-thumbnail{
 
-}
 
-#modal-bg {
- 	cursor: pointer;
- 	display: none;
- 	width: 100%;
- 	height: 100vh;
- 	background: rgba(0, 0, 0, 0.75);
- 	position: fixed;
- 	z-index: 10;
- }
+.youtube-player {
+        position: relative;
+        padding-bottom: 56.23%;
+        /* Use 75% for 4:3 videos */
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+        background: #000;
+        margin: 5px;
+    }
 
+    .youtube-player iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 100;
+        background: transparent;
+    }
+
+    .youtube-player img {
+        bottom: 0;
+        display: block;
+        left: 0;
+        margin: auto;
+        max-width: 100%;
+        width: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        border: none;
+        height: auto;
+        cursor: pointer;
+        -webkit-transition: .4s all;
+        -moz-transition: .4s all;
+        transition: .4s all;
+    }
+
+    .youtube-player img:hover {
+        -webkit-filter: brightness(75%);
+    }
+
+    .youtube-player .play {
+        height: 72px;
+        width: 72px;
+        left: 50%;
+        top: 50%;
+        margin-left: -36px;
+        margin-top: -36px;
+        position: absolute;
+        cursor: pointer;
+    }
+    /* ****************************** */
+
+    .youtube-player-2 {
+        position: relative;
+        padding-bottom: 56.23%;
+        /* Use 75% for 4:3 videos */
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+        background: #000;
+        margin: 5px;
+    }
+
+    .youtube-player-2 iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 100;
+        background: transparent;
+    }
+
+    .youtube-player-2 img {
+        bottom: 0;
+        display: block;
+        left: 0;
+        margin: auto;
+        max-width: 100%;
+        width: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        border: none;
+        height: auto;
+        cursor: pointer;
+        -webkit-transition: .4s all;
+        -moz-transition: .4s all;
+        transition: .4s all;
+    }
+
+    .youtube-player-2 img:hover {
+        -webkit-filter: brightness(75%);
+    }
+
+    .youtube-player-2 .play-2 {
+        height: 72px;
+        width: 72px;
+        left: 50%;
+        top: 50%;
+        margin-left: -36px;
+        margin-top: -36px;
+        position: absolute;
+        cursor: pointer;
+    }
 	</style>
 
-	<script>		
-	</script>
+ 
 </head>
 
 <!-- aria-label="LONG" -->
@@ -98,13 +196,8 @@
 							<div class="grid-element">
                   <img class="center-me" src="https://via.placeholder.com/700x400?text=Image+of+actual+landing" style="width:75%;">
 
-										<h2>helpful map hints</h2>
-									<p> 1. The form autopopulates “lat & Long” from the map so no need to fill it in once you pick from the map.
-											<br><br>
-											2.  The Marker starts at Lift-off
-											<br><br>
-											3. Hint: Stay west of the Mississippi river & east of California</p>
-									<br><br>
+										<h2>Title</h2>
+								
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
 									<br/>
@@ -114,8 +207,12 @@
               <div class="grid-element">
 
                 
-                  <h2>Video Title</h2>
-                  <iframe  class="center-me" width="75%" height="400px" src="https://www.youtube.com/embed/At4OluUfE3M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  <h2>Reveal Video</h2>
+                  <!-- <iframe  class="center-me" width="75%" height="400px" src="https://www.youtube.com/embed/At4OluUfE3M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+
+                  <div class="youtube-player center-me" data-id="VIDEO_ID" ></div>
+
+                  
 
                 <!-- <img id="video_thumbnail_1" class="center-me"  src="https://via.placeholder.com/700x400?text=Video+thumbnail" style="width:75%;"> -->
 
@@ -126,9 +223,8 @@
                   </div>
            -->
 
-                <h2>Video Title 2</h2>
-                <iframe  class="center-me" width="75%" height="400px" src="https://www.youtube.com/embed/At4OluUfE3M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+                <!-- <h2>How we retrieved it</h2>
+                <div class="youtube-player-2 center-me" data-id-2="VIDEO_ID" ></div> -->
                 <!-- <img class="center-me"  src="https://via.placeholder.com/700x400?text=Video+thumbnail" style="width:75%;"> -->
 
                
@@ -148,48 +244,63 @@
 </body>
 <script>
 
-    // Finds all iframes from youtubes and gives them a unique class
-    jQuery('iframe[src*="https://www.youtube.com/embed/"]').addClass("youtube-iframe");
+document.addEventListener("DOMContentLoaded",
+        function() {
+            var div, n,
+                v = document.getElementsByClassName("youtube-player");
+            for (n = 0; n < v.length; n++) {
+                div = document.createElement("div");
+                div.setAttribute("data-id", v[n].dataset.id);
+                div.innerHTML = labnolThumb(v[n].dataset.id);
+                div.onclick = labnolIframe;
+                v[n].appendChild(div);
+            }
+        });
 
-jQuery("#modal-bg").click(function() {
-  // changes the iframe src to prevent playback or stop the video playback in our case
-  $('.youtube-iframe').each(function(index) {
-    $(this).attr('src', $(this).attr('src'));
-    return false;
-  });
-  
-//click function
-});
+    function labnolThumb(id) {
+        var thumb = '<img src="https://via.placeholder.com/700x400?text=Video+thumbnail">',
+            play = '<div class="play"></div>';
+        return thumb.replace("ID", id) + play;
+    }
 
-
-$("#modal-bg").click(function() {
-				$("#modal-bg").css("display", "none");
-				$("#modal-1").addClass("modal_remove");
-				$("#modal-1").removeClass("modal_display");
-				$("#modal-2").addClass("modal_remove");
-				$("#modal-2").removeClass("modal_display");
-				$("#modal-3").addClass("modal_remove");
-				$("#modal-3").removeClass("modal_display");
-				$("#modal-4").addClass("modal_remove");
-				$("#modal-4").removeClass("modal_display");
-				$("#modal-5").addClass("modal_remove");
-				$("#modal-5").removeClass("modal_display");
-				$("#modal-6").addClass("modal_remove");
-				$("#modal-6").removeClass("modal_display");
-				$("#modal-7").addClass("modal_remove");
-				$("#modal-7").removeClass("modal_display");
-				$("#inspire_video_wrapper").css("display", "none");
-				$("#inspire_video")[0].src = "https://www.youtube.com/embed/PivTeqRZ1xw?autoplay=0";
-			});
+    function labnolIframe() {
+        var iframe = document.createElement("iframe");
+        var embed = "https://www.youtube.com/embed/by3rKKroqko?autoplay=1&rel=0";
+        iframe.setAttribute("src", embed.replace("ID", this.dataset.id));
+        iframe.setAttribute("frameborder", "0");
+        iframe.setAttribute("allowfullscreen", "1");
+        this.parentNode.replaceChild(iframe, this);
+    }
 
 
-$("#inspire_video_wrapper").css("display", "none");
-        $("#inspire_video")[0].src = "https://www.youtube.com/embed/PivTeqRZ1xw?autoplay=0";
-        
-		$("#video_thumbnail_1").click(function() {
-				$("#modal-bg").css("display", "block");
-				$("#inspire_video_wrapper").css("display", "block");
-				$("#inspire_video")[0].src = "https://www.youtube.com/embed/PivTeqRZ1xw?autoplay=1";
-			});
+  // ******************************
+  // document.addEventListener("DOMContentLoaded",
+  // function() {
+  //           var div, n,
+  //               v = document.getElementsByClassName("youtube-player-2");
+  //           for (n = 0; n < v.length; n++) {
+  //               div = document.createElement("div");
+  //               div.setAttribute("data-id-2", v[n].dataset.id);
+  //               div.innerHTML = labnolThumb(v[n].dataset.id);
+  //               div.onclick = labnolIframe;
+  //               v[n].appendChild(div);
+  //           }
+  //       });
+
+  //   function labnolThumb(id) {
+  //       var thumb = '<img src="https://via.placeholder.com/700x400?text=Video+thumbnail+2">',
+  //           play = '<div class="play-2"></div>';
+  //       return thumb.replace("ID", id) + play;
+  //   }
+
+  //   function labnolIframe() {
+  //       var iframe = document.createElement("iframe");
+  //       var embed = "https://www.youtube.com/embed/wNzdGIhTaHY?autoplay=1&rel=0";
+  //       iframe.setAttribute("src", embed.replace("ID", this.dataset.id));
+  //       iframe.setAttribute("frameborder", "0");
+  //       iframe.setAttribute("allowfullscreen", "1");
+  //       this.parentNode.replaceChild(iframe, this);
+  //   }
+ 
 </script>
 </html>
